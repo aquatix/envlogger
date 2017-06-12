@@ -2,5 +2,18 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
+from .models import WeatherProvider, WeatherConfig, Observation
 
-# Register your models here.
+
+class WeatherProviderAdmin(admin.ModelAdmin):
+    list_display = ('source', )
+
+class WeatherConfigAdmin(admin.ModelAdmin):
+    list_display = ('provider', 'city', 'country', 'latitude', 'longitude', 'enabled', )
+
+class ObservationAdmin(admin.ModelAdmin):
+    list_display = ('weatherconfig', 'created', 'city', 'temp_c', )
+
+admin.site.register(WeatherProvider, WeatherProviderAdmin)
+admin.site.register(WeatherConfig, WeatherConfigAdmin)
+admin.site.register(Observation, ObservationAdmin)
