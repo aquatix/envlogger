@@ -44,6 +44,9 @@ class WeatherConfig(BaseModel):
     latitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
     longitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
 
+    def __unicode__(self):
+        return '{} ({}, {})'.format(self.provider, self.city, self.country)
+
 
 class Observation(BaseModel):
     """Observation for a certain location"""
@@ -59,6 +62,34 @@ class Observation(BaseModel):
     observation_time_rfc822 = models.CharField(max_length=50, null=True, blank=True)
     observation_epoch = models.BigIntegerField(null=True, blank=True)
 
+    sunrise_time = models.BigIntegerField(null=True, blank=True)
+    sunset_time = models.BigIntegerField(null=True, blank=True)
+
     # Weather
     temp_c = models.FloatField(default=0.0, null=True, blank=True)
     temp_f = models.FloatField(default=0.0, null=True, blank=True)
+    feelslike_c = models.FloatField(default=0.0, null=True, blank=True)
+    feelslike_f = models.FloatField(default=0.0, null=True, blank=True)
+    windchill_c = models.FloatField(default=0.0, null=True, blank=True)
+    windchill_f = models.FloatField(default=0.0, null=True, blank=True)
+
+    pressure_mb = models.FloatField(null=True, blank=True)
+    pressure_in = models.FloatField(null=True, blank=True)
+    pressure_trend = models.CharField(max_length=1, null=True, blank=True)  # + or -
+    dewpoint_c = models.FloatField(null=True, blank=True)
+    dewpoint_f = models.FloatField(null=True, blank=True)
+
+    cloud_coverage = models.IntegerField(null=True, blank=True)
+    humidity = models.IntegerField(null=True, blank=True)
+    uv_index = models.IntegerField(null=True, blank=True)
+    visibility_mi = models.FloatField(null=True, blank=True)
+    visibility_km = models.FloatField(null=True, blank=True)
+
+    wind_deg = models.IntegerField(null=True, blank=True)
+    wind_speed_mph = models.FloatField(null=True, blank=True)
+    wind_speed_kph = models.FloatField(null=True, blank=True)
+    wind_gust_mph = models.FloatField(null=True, blank=True)
+    wind_gust_kph = models.FloatField(null=True, blank=True)
+
+    description_detailed = models.CharField(max_length=255, null=True, blank=True)
+    description_short = models.CharField(max_length=50, null=True, blank=True)

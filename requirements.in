@@ -1,4 +1,6 @@
 django
+pyowm
+python-forecastio
 requests
 
 pkg-resources==0.0.0
