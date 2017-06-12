@@ -86,6 +86,7 @@ class Observation(BaseModel):
     visibility_km = models.FloatField(null=True, blank=True)
 
     wind_deg = models.IntegerField(null=True, blank=True)
+    wind_direction = models.CharField(max_length=10, null=True, blank=True)
     wind_speed_mph = models.FloatField(null=True, blank=True)
     wind_speed_kph = models.FloatField(null=True, blank=True)
     wind_gust_mph = models.FloatField(null=True, blank=True)

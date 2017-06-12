@@ -4,39 +4,54 @@ from .models import Observation
 from pyowm import OWM
 
 def get_wunderground_observation(config):
+    """Weather Underground observation for current weather in location specified in config"""
     url = 'http://api.wunderground.com/api/{}/geolookup/conditions/q/{}/{}.json'.format(config.provider.apikey, config.country, config.city)
     data = requests.get(url).json()
+    w = data['current_observation']
+
     result = Observation(weatherconfig=config)
 
     location = data['location']['city']
-    temp_c = data['current_observation']['temp_c']
+    temp_c = w['temp_c']
     print "Current temperature in %s is: %s C" % (location, temp_c)
 
     # Location
-    result.country_iso3166 = data['current_observation']['observation_location']['country_iso3166']
+    result.country_iso3166 = w['observation_location']['country_iso3166']
 
     # Weather
-    result.temp_c = data['current_observation']['temp_c']
-    result.temp_f = data['current_observation']['temp_f']
+    result.temp_c = w['temp_c']
+    result.temp_f = w['temp_f']
 
-    result.feelslike_c = data['current_observation']['feelslike_c']
-    result.feelslike_f = data['current_observation']['feelslike_f']
-    if data['current_observation']['windchill_c'] != 'NA':
-        result.windchill_c = data['current_observation']['windchill_c']
-    if data['current_observation']['windchill_f'] != 'NA':
-        result.windchill_f = data['current_observation']['windchill_f']
+    result.feelslike_c = w['feelslike_c']
+    result.feelslike_f = w['feelslike_f']
+    if w['windchill_c'] != 'NA':
+        result.windchill_c = w['windchill_c']
+    if w['windchill_f'] != 'NA':
+        result.windchill_f = w['windchill_f']
 
-    result.pressure_in = data['current_observation']['pressure_in']
+    result.pressure_in = w['pressure_in']
+    result.pressure_mb = w['pressure_mb']
 
-    #result.cloud_coverage = data['current_observation']['']
-    result.visibility_km = data['current_observation']['visibility_km']
-    result.visibility_mi = data['current_observation']['visibility_mi']
-    result.uv_index = data['current_observation']['UV']
+    #result.cloud_coverage = w['']
+    humidity = w['relative_humidity']
+    result.humidity = int(humidity[:-1])
+    result.uv_index = w['UV']
+    result.visibility_km = w['visibility_km']
+    result.visibility_mi = w['visibility_mi']
 
-    result.description_detailed = data['current_observation']['weather']
+    result.wind_deg = w['wind_degrees']
+    result.wind_direction = w['wind_dir']
+    result.wind_speed_kph = w['wind_kph']
+    result.wind_speed_mph = w['wind_mph']
+    result.wind_gust_kph = w['wind_gust_kph']
+    result.wind_gust_mph = w['wind_gust_mph']
+
+    result.description_detailed = w['weather']
+    result.description_short = w['icon']
     return result
 
 def get_openweathermap_observation(config):
+    """OpenWeatherMap observation for current weather in location specified in config"""
     result = Observation(weatherconfig=config)
     if config.provider.pro:
         owm = OWM(config.provider.apikey, subscription_type='pro')
@@ -59,10 +74,17 @@ def get_openweathermap_observation(config):
     result.sunrise_time = w.get_sunrise_time()
 
 
+    result.pressure_mb = w.get_pressure()['press']
+
     result.cloud_coverage = w.get_clouds()
+    result.humidity = w.get_humidity()
+    #result.uv_index = w.
+    result.visibility_km = w.get_visibility_distance()
 
+    result.wind_deg = w.get_wind()['deg']
+    result.wind_speed_kph = w.get_wind()['speed']
 
-    result.weather_short = w.get_status()
     result.weather_description = w.get_detailed_status()
+    result.weather_short = w.get_status()
 
     return result
