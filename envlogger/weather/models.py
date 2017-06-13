@@ -57,13 +57,18 @@ class Observation(BaseModel):
     country_name = models.CharField(max_length=200, null=True, blank=True)
     state = models.CharField(max_length=200, null=True, blank=True)
     city = models.CharField(max_length=200, null=True, blank=True)
+    stationid = models.CharField(max_length=200, null=True, blank=True)
+    latitude = models.FloatField(null=True, blank=True)
+    longitude = models.FloatField(null=True, blank=True)
+    elevation = models.FloatField(null=True, blank=True)
 
     # Date and time
     observation_time_rfc822 = models.CharField(max_length=50, null=True, blank=True)
-    observation_epoch = models.BigIntegerField(null=True, blank=True)
+    #observation_epoch = models.BigIntegerField(null=True, blank=True)
+    observation_epoch = models.DateTimeField(null=True, blank=True)
 
-    sunrise_time = models.BigIntegerField(null=True, blank=True)
-    sunset_time = models.BigIntegerField(null=True, blank=True)
+    sunrise_time = models.DateTimeField(null=True, blank=True)
+    sunset_time = models.DateTimeField(null=True, blank=True)
 
     # Weather
     temp_c = models.FloatField(default=0.0, null=True, blank=True)
@@ -79,8 +84,12 @@ class Observation(BaseModel):
     dewpoint_c = models.FloatField(null=True, blank=True)
     dewpoint_f = models.FloatField(null=True, blank=True)
 
+    snow_volume = models.FloatField(null=True, blank=True)
+    rain_volume = models.FloatField(null=True, blank=True)
+
     cloud_coverage = models.IntegerField(null=True, blank=True)
     humidity = models.IntegerField(null=True, blank=True)
+    ozone = models.FloatField(null=True, blank=True)  # Dobson units
     uv_index = models.IntegerField(null=True, blank=True)
     visibility_mi = models.FloatField(null=True, blank=True)
     visibility_km = models.FloatField(null=True, blank=True)

@@ -7,6 +7,7 @@ from .models import WeatherProvider, WeatherConfig, Observation
 from .parsers import (
     get_openweathermap_observation,
     get_wunderground_observation,
+    get_darksky_observation,
 )
 
 
@@ -16,6 +17,8 @@ def get_observation_for_config(config):
         result = get_openweathermap_observation(config)
     elif config.provider.source == WeatherProvider.SOURCE_WUNDERGROUND:
         result = get_wunderground_observation(config)
+    elif config.provider.source == WeatherProvider.SOURCE_DARKSKY:
+        result = get_darksky_observation(config)
 
     print(result.__dict__)
     result.save()
