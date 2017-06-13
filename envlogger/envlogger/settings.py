@@ -20,18 +20,30 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'j8atsgyrh=cwhfy42l=itfr^r(=0&xy7)yx97g_gkr8&2=i$ma'
+try:
+    SECRET_KEY = os.environ['ENVLOGGER_SECRET_KEY']
+except KeyError:
+    print('No ENV var found for ENVLOGGER_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+try:
+    DEBUG = os.environ['DEBUG']
+except KeyError:
+    DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
+try:
+    ALLOWED_HOSTS.append(os.environ['ENVLOGGER_SERVER_HOST'])
+except KeyError:
+    print('No ENV var found for ENVLOGGER_SERVER_HOST')
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'weather',
+    'temperature',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -81,6 +93,19 @@ DATABASES = {
     }
 }
 
+try:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ['ENVLOGGER_DB_NAME'],
+        'USER': os.environ['ENVLOGGER_DB_USER'],
+        'PASSWORD': os.environ['ENVLOGGER_DB_PASS'],
+        'HOST': os.environ['ENVLOGGER_DB_HOST'],
+        'PORT': os.environ['ENVLOGGER_DB_PORT'],
+        #
+    }
+except KeyError as e:
+    print('No ENV var for DB config found: {}'.format(e))
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -114,8 +139,24 @@ USE_L10N = True
 
 USE_TZ = True
 
+DATETIME_FORMAT = '%Y-%m-%d %H:%M'
+try:
+    DATETIME_FORMAT = os.environ['ENVLOGGER_DATETIME_FORMAT']
+except KeyError:
+    print('No ENV var found for ENVLOGGER_DATETIME_FORMAT')
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+try:
+    STATIC_ROOT = os.environ['ENVLOGGER_STATIC_ROOT']
+except KeyError:
+    print('No ENV var found for ENVLOGGER_STATIC_ROOT')
+
+SITE_TITLE = 'envlogger'
+try:
+    SITE_TITLE = os.environ['ENVLOGGER_SITE_TITLE']
+except KeyError:
+    print('No ENV var found for ENVLOGGER_SITE_TITLE')
