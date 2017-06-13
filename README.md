@@ -1,5 +1,12 @@
 # envlogger
-Log environmental information, like weather, temperatures at locations, traffic and more
+Log environmental information, like weather, temperatures at locations and of devices, traffic and more.
+
+
+## Installation
+
+Create a virtualenv and install the requirements:
+
+    pip install -r requirements.txt
 
 
 ## Dependencies
