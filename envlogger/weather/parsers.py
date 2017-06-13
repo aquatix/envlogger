@@ -72,8 +72,10 @@ def get_wunderground_observation(config):
     result.humidity = int(humidity[:-1])
     #result.ozone
     result.uv_index = w['UV']
-    result.visibility_km = w['visibility_km']
-    result.visibility_mi = w['visibility_mi']
+    if w['visibility_km'] != 'N/A':
+        result.visibility_km = w['visibility_km']
+    if w['visibility_mi'] != 'N/A':
+        result.visibility_mi = w['visibility_mi']
 
     result.wind_deg = w['wind_degrees']
     result.wind_direction = w['wind_dir']
