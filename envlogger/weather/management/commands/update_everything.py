@@ -8,5 +8,5 @@ class Command(BaseCommand):
         update_everything()
 
         # TODO: log
-        self.stdout.write(self.style.SUCCESS('Successfully updated everything'))
+        #self.stdout.write(self.style.SUCCESS('Successfully updated everything'))
 
