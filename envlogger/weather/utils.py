@@ -2,8 +2,9 @@
 Helper functions
 """
 from datetime import datetime
+from pytz import UTC
 
-def unix_to_python(timestamp):
+def unix_to_python(timestamp, utc=True):
     """
     Convert unix timestamp to python datetime
     """
@@ -11,5 +12,8 @@ def unix_to_python(timestamp):
     if int(timestamp) == 0:
         return None
     else:
-        return datetime.utcfromtimestamp(float(timestamp))
+        tz = None
+        if utc:
+            tz = UTC
+        return datetime.fromtimestamp(float(timestamp), tz)
 

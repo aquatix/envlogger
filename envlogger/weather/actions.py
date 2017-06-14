@@ -21,7 +21,7 @@ def get_observation_for_config(config):
         result = get_darksky_observation(config)
 
     if result:
-        print(result.__dict__)
+        #print(result.__dict__)
         result.save()
 
 def update_everything():

@@ -4,6 +4,7 @@ from .models import Observation
 from .utils import unix_to_python
 import forecastio
 from pyowm import OWM
+from pytz import UTC
 
 def get_wunderground_observation(config):
     """Weather Underground observation for current weather in location specified in config"""
@@ -15,7 +16,6 @@ def get_wunderground_observation(config):
 
     location = data['location']['city']
     temp_c = w['temp_c']
-    print "Current temperature in %s is: %s C" % (location, temp_c)
 
     # Location
     result.country_iso3166 = w['observation_location']['country_iso3166']
@@ -181,7 +181,7 @@ def get_darksky_observation(config):
     result.elevation
 
     result.observation_time_rfc822
-    result.observation_epoch = w.time
+    result.observation_epoch = w.time.replace(tzinfo=UTC)
 
     try:
         result.sunrise_time = unix_to_python(daily.sunriseTime)
