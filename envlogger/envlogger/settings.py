@@ -32,13 +32,17 @@ try:
 except KeyError:
     DEBUG = False
 
+DEBUGTOOLBAR = False
+#if DEBUG:
+#    DEBUGTOOLBAR = True
+
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
 try:
     ALLOWED_HOSTS.append(os.environ['ENVLOGGER_SERVER_HOST'])
 except KeyError:
     print('No ENV var found for ENVLOGGER_SERVER_HOST')
 
-if DEBUG:
+if DEBUGTOOLBAR:
     INTERNAL_IPS = ['127.0.0.1']
 
 # Application definition
@@ -54,7 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-if DEBUG:
+if DEBUGTOOLBAR:
     INSTALLED_APPS.append('debug_toolbar')
 
 MIDDLEWARE = [
@@ -67,7 +71,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-if DEBUG:
+if DEBUGTOOLBAR:
     MIDDLEWARE.append('debug_toolbar.middleware.DebugToolbarMiddleware')
 
 ROOT_URLCONF = 'envlogger.urls'
@@ -86,6 +90,13 @@ TEMPLATES = [
             ],
         },
     },
+    #{
+    #    'BACKEND': 'django.template.backends.jinja2.Jinja2',
+    #    'DIRS': [],
+    #    'APP_DIRS': True,
+    #    'OPTIONS': {
+    #    },
+    #},
 ]
 
 WSGI_APPLICATION = 'envlogger.wsgi.application'
