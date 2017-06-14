@@ -44,6 +44,20 @@ class WeatherConfig(BaseModel):
     latitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
     longitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
 
+    def get_dataseries(self, fields):
+        observations = Observation.objects.filter(weatherconfig=self).order_by('observation_epoch')
+        result = []
+        for obs in observations:
+            data = []
+            for field in fields:
+                data.append((field, obs.__dict__[field]))
+            result.append((obs.observation_epoch, data),)
+        return result
+
+    @property
+    def slug(self):
+        return '{}_{}'.format(self.provider, self.id)
+
     def __unicode__(self):
         return '{} ({}, {})'.format(self.provider, self.city, self.country)
 
