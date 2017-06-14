@@ -38,6 +38,8 @@ try:
 except KeyError:
     print('No ENV var found for ENVLOGGER_SERVER_HOST')
 
+if DEBUG:
+    INTERNAL_IPS = ['127.0.0.1']
 
 # Application definition
 
@@ -52,6 +54,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+if DEBUG:
+    INSTALLED_APPS.append('debug_toolbar')
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -61,6 +66,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+if DEBUG:
+    MIDDLEWARE.append('debug_toolbar.middleware.DebugToolbarMiddleware')
 
 ROOT_URLCONF = 'envlogger.urls'
 
