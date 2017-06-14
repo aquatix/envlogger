@@ -96,7 +96,11 @@ def get_openweathermap_observation(config):
     else:
         owm = OWM(config.provider.apikey)
 
-    obs = owm.weather_at_place('{},{}'.format(config.city, config.country))
+    try:
+        obs = owm.weather_at_place('{},{}'.format(config.city, config.country))
+    except TypeError:
+        print('Something went wrong while fetching OpenWeatherMap forecast for {}, {}'.format(config.city, config.country))
+        return None
     w = obs.get_weather()
 
     result.country_iso3166
@@ -144,7 +148,10 @@ def get_openweathermap_observation(config):
     result.visibility_mi
     result.visibility_km = w.get_visibility_distance()
 
-    result.wind_deg = w.get_wind()['deg']
+    try:
+        result.wind_deg = w.get_wind()['deg']
+    except:
+        pass
     result.wind_direction
     result.wind_speed_mph
     result.wind_speed_kph = w.get_wind()['speed']

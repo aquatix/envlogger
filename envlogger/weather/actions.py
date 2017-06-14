@@ -20,8 +20,9 @@ def get_observation_for_config(config):
     elif config.provider.source == WeatherProvider.SOURCE_DARKSKY:
         result = get_darksky_observation(config)
 
-    print(result.__dict__)
-    result.save()
+    if result:
+        print(result.__dict__)
+        result.save()
 
 def update_everything():
     configs = WeatherConfig.objects.filter(enabled=True)
