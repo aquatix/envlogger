@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import decimal
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -64,16 +65,20 @@ class Refuelling(BaseModel):
         return '{0:.2f}'.format(self.km_per_litre_float)
 
     @property
-    def litre_per_100km(self):
-        return self.litres / (self.daycounterkm / 100.0)
+    def litre_per_100km_float(self):
+        return self.litres / (self.daycounterkm / decimal.Decimal(100.0))
 
     @property
-    def show_litre_per_100km(self):
-        return '{0:.2f}'.format(self.litre_per_100km)
+    def litre_per_100km(self):
+        return '{0:.2f}'.format(self.litre_per_100km_float)
+
+    @property
+    def price_per_km_float(self):
+        return self.price / decimal.Decimal(self.daycounterkm)
 
     @property
     def price_per_km(self):
-        return self.price / self.daycounterkm
+        return '{0:.2f}'.format(self.price_per_km_float)
 
 
 class Default(BaseModel):
