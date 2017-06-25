@@ -17,6 +17,7 @@ class FuelStation(BaseModel):
 
     user = models.ForeignKey(User)
     label = models.CharField(max_length=200)
+    address = models.CharField(max_length=512)
     notes = models.CharField(max_length=512)
 
     def __unicode__(self):
@@ -30,7 +31,7 @@ class Refuelling(BaseModel):
     date = models.DateTimeField()
     litres = models.DecimalField(max_digits=9, decimal_places=3)
     litre_price = models.DecimalField(max_digits=6, decimal_places=3)
-    price = models.DecimalField(max_digits=9, decimal_places=3)
+    price = models.DecimalField(max_digits=9, decimal_places=2)
 
     daycounterkm = models.DecimalField(max_digits=9, decimal_places=1)
     totalcounterkm = models.IntegerField()

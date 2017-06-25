@@ -48,8 +48,9 @@ if DEBUGTOOLBAR:
 # Application definition
 
 INSTALLED_APPS = [
-    'weather',
+    'fuel',
     'temperature',
+    'weather',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
