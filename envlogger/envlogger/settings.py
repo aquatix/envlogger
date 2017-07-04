@@ -152,6 +152,10 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
+try:
+    TIME_ZONE = os.environ['ENVLOGGER_TIME_ZONE']
+except KeyError:
+    print('No ENV var found for ENVLOGGER_TIME_ZONE')
 
 USE_I18N = True
 
