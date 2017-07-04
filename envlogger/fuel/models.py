@@ -81,6 +81,10 @@ class Refuelling(BaseModel):
         return '{0:.2f}'.format(self.price_per_km_float)
 
 
+    class Meta:
+        ordering = ['-date']
+
+
 class Default(BaseModel):
     """Default Car and FuelStation for User"""
 
