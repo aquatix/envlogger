@@ -10,7 +10,7 @@ class LocationAdmin(admin.ModelAdmin):
     search_fields = ('label', 'address', )
 
 class MeasurementAdmin(admin.ModelAdmin):
-    list_display = ('date', 'electricity_use_kwh', 'electricity_out_kwh', 'gas_m3', 'water_m3', 'gas_m3_day', 'timediff', 'notes', )
+    list_display = ('date', 'electricity_use_kwh', 'electricity_use_day', 'electricity_out_kwh', 'electricity_out_day', 'gas_m3', 'gas_m3_day', 'water_m3', 'water_m3_day', 'timediff', 'notes', )
     list_filter = ('location', )
 
 admin.site.register(Location, LocationAdmin)

@@ -56,24 +56,73 @@ class Measurement(BaseModel):
         return self.diff_with_previous(previous)
 
     @property
+    def electricity_use_day_float(self):
+        previous = self.get_previous()
+        if not previous:
+            return None
+        diff = self.diff_with_previous(previous)
+        day_diff = timedelta(days=1)
+        day_frac = float(diff.total_seconds()) / float(day_diff.total_seconds())
+        electricity_diff = float(self.electricity_use_kwh - previous.electricity_use_kwh)
+        return electricity_diff / day_frac
+
+    @property
+    def electricity_use_day(self):
+        result = self.electricity_use_day_float
+        if not result:
+            return None
+        return '{0:.2f}'.format(result)
+
+    @property
+    def electricity_out_day_float(self):
+        previous = self.get_previous()
+        if not previous:
+            return None
+        diff = self.diff_with_previous(previous)
+        day_diff = timedelta(days=1)
+        day_frac = float(diff.total_seconds()) / float(day_diff.total_seconds())
+        electricity_diff = float(self.electricity_out_kwh - previous.electricity_out_kwh)
+        return electricity_diff / day_frac
+
+    @property
+    def electricity_out_day(self):
+        result = self.electricity_out_day_float
+        if not result:
+            return None
+        return '{0:.2f}'.format(result)
+
+    @property
     def gas_m3_day_float(self):
         previous = self.get_previous()
         if not previous:
             return None
         diff = self.diff_with_previous(previous)
         day_diff = timedelta(days=1)
-        #day_frac = decimal.Decimal(diff.total_seconds()) / decimal.Decimal(day_diff.total_seconds())
         day_frac = float(diff.total_seconds()) / float(day_diff.total_seconds())
-        #print day_frac
         gas_m3_diff = float(self.gas_m3 - previous.gas_m3)
-        #print gas_m3_diff
-        print gas_m3_diff / day_frac
-        print type(gas_m3_diff / day_frac)
         return gas_m3_diff / day_frac
 
     @property
     def gas_m3_day(self):
         result = self.gas_m3_day_float
+        if not result:
+            return None
+        return '{0:.2f}'.format(result)
+
+    @property
+    def water_m3_day_float(self):
+        previous = self.get_previous()
+        if not previous:
+            return None
+        diff = self.diff_with_previous(previous)
+        day_diff = timedelta(days=1)
+        day_frac = float(diff.total_seconds()) / float(day_diff.total_seconds())
+        water_m3_diff = float(self.water_m3 - previous.water_m3)
+        return water_m3_diff / day_frac
+
+    @property
+    def water_m3_day(self):
+        result = self.water_m3_day_float
         if not result:
             return None
         return '{0:.2f}'.format(result)
