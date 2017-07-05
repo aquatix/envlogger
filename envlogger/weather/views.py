@@ -23,12 +23,14 @@ def weatherdashboard(request, user_id):
     for provider in weatherproviders:
         weatherconfigs.extend(WeatherConfig.objects.filter(provider=provider))
 
-    graphs = {}
+    colours = ['rgba(153,255,51,0.4)', 'rgba(255,255,0,0.4)', 'rgba(255,153,0,0.4)']
+    graphs = []
     for config in weatherconfigs:
-        graphs[config.slug] = config.get_dataseries(['temp_c', 'wind_speed_kph', 'humidity'])
+        graphs.append([config, config.slug, config.get_dataseries(['temp_c', 'wind_speed_kph', 'humidity'])])
 
     context = {
         'weatherconfigs': weatherconfigs,
+        'colours': colours,
         'graphs': graphs,
     }
 

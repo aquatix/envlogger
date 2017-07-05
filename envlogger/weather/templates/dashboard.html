@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>DCP Completeness</title>
+        <title>Weather dashboard</title>
         <meta charset="utf-8"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
 <style>
@@ -62,52 +62,37 @@ a#scrolltoggle:hover
 
         <h1>Weather dashboard</h1>
 
-        {% for config in weatherconfigs %}
+        {{ graphs }}
+
+        {% for config, configslug, dataseries in graphs %}
 
         <div class="contentblock">
         <h2>{{ config }}</h2>
 
-        <canvas id="{{ config.slug }}"></canvas>
-
+        <canvas id="{{ configslug }}"></canvas>
 
         <script>
-var ctx = document.getElementById('{{ config.slug }}').getContext('2d');
+var ctx = document.getElementById('{{ configslug }}').getContext('2d');
 var myChart = new Chart(ctx, {
   type: 'line',
   data: {
     labels: [
-        {% for dataserie in graphs[config.slug] %}
-            '{{ dataserie[0] }}',
+        {% for dataserie in dataseries %}
+            '{{ dataserie.0 }}',
         {% endfor %}
     ],
     datasets: [
-    {% for dataserie in graphs[config.slug] %}
+    {% for dataserie in dataseries %}
     {
-      label: 'articles',
+        label: '{{ dataserie.0 }}',
       data: [
-          {% for  in publications[publication]['months'] %}
-              '{{ pubmonth[1] }}',
+          {% for point in dataserie.1 %}
+              '{{ point }}',
           {% endfor %}
       ],
       backgroundColor: "rgba(153,255,51,0.4)"
     },
-    {
-      label: 'running avg (6 month)',
-      data: [
-          {% for pubmonth in publications[publication]['months'] %}
-              '{{ pubmonth[3] }}',
-          {% endfor %}
-      ],
-      backgroundColor: "rgba(255,255,0,0.4)"
-    }, {
-      label: 'avg/day',
-      data: [
-          {% for pubmonth in publications[publication]['months'] %}
-              '{{ pubmonth[2] }}',
-          {% endfor %}
-      ],
-      backgroundColor: "rgba(255,153,0,0.4)"
-    }
+    {% endfor %}
     ]
   }
 });
