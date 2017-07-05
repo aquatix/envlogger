@@ -167,6 +167,8 @@ USE_TZ = True
 DATETIME_FORMAT = '%Y-%m-%d %H:%M'
 try:
     DATETIME_FORMAT = os.environ['ENVLOGGER_DATETIME_FORMAT']
+    from django.conf.locale.en import formats as en_formats
+    en_formats.DATETIME_FORMAT = os.environ['ENVLOGGER_DATETIME_FORMAT']
 except KeyError:
     print('No ENV var found for ENVLOGGER_DATETIME_FORMAT')
 
