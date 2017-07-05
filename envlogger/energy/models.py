@@ -81,8 +81,11 @@ class Measurement(BaseModel):
         diff = self.diff_with_previous(previous)
         day_diff = timedelta(days=1)
         day_frac = float(diff.total_seconds()) / float(day_diff.total_seconds())
-        electricity_diff = float(self.electricity_out_kwh - previous.electricity_out_kwh)
-        return electricity_diff / day_frac
+        if self.electricity_out_kwh and previous.electricity_out_kwh:
+            electricity_diff = float(self.electricity_out_kwh - previous.electricity_out_kwh)
+            return electricity_diff / day_frac
+        else:
+            return None
 
     @property
     def electricity_out_day(self):
