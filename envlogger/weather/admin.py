@@ -13,6 +13,8 @@ class WeatherConfigAdmin(admin.ModelAdmin):
 
 class ObservationAdmin(admin.ModelAdmin):
     list_display = ('weatherconfig', 'created', 'city', 'temp_c', )
+    search_list = ('weatherconfig', 'country_iso3166', 'country_name', 'state', 'city', 'description_detailed', 'description_short', )
+    list_filter = ('weatherconfig', 'city', )
 
 admin.site.register(WeatherProvider, WeatherProviderAdmin)
 admin.site.register(WeatherConfig, WeatherConfigAdmin)

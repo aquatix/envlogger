@@ -22,6 +22,9 @@ class Location(BaseModel):
     address = models.CharField(max_length=255, null=True, blank=True)
     notes = models.CharField(max_length=512, null=True, blank=True)
 
+    def __unicode__(self):
+        return self.label
+
 
 class Measurement(BaseModel):
     location = models.ForeignKey(Location)

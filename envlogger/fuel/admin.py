@@ -13,6 +13,8 @@ class FuelStationAdmin(admin.ModelAdmin):
 
 class RefuellingAdmin(admin.ModelAdmin):
     list_display = ('date', 'litres', 'km_per_litre', 'litre_per_100km', 'price', 'price_per_km', 'station', 'car', )
+    search_list = ('notes', )
+    filter_list = ('car', 'station', )
 
 class DefaultsAdmin(admin.ModelAdmin):
     list_display = ('user', 'car', 'station', )
