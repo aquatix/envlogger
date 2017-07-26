@@ -33,7 +33,7 @@ class Measurement(BaseModel):
 
     electricity_use_kwh = models.IntegerField()
     electricity_out_kwh = models.IntegerField(null=True, blank=True)
-    electricity_generated_kwh = models.IntegerField(null=True, blank=True)
+    electricity_generated_kwh = models.DecimalField(max_digits=9, decimal_places=1, null=True, blank=True)
     gas_m3 = models.DecimalField(max_digits=9, decimal_places=3)
     water_m3 = models.DecimalField(max_digits=9, decimal_places=3)
 
