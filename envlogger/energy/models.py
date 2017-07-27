@@ -5,7 +5,7 @@ import decimal
 from django.contrib.auth.models import User
 from django.db import models
 
-from datetime import timedelta
+from datetime import timedelta, datetime, date
 
 
 class BaseModel(models.Model):
@@ -21,6 +21,18 @@ class Location(BaseModel):
     label = models.CharField(max_length=200)
     address = models.CharField(max_length=255, null=True, blank=True)
     notes = models.CharField(max_length=512, null=True, blank=True)
+
+    def get_first_and_latest_measurements_of_this_year(self):
+        today = datetime.now()
+        start_of_year = date(date.today().year, 1, 1)
+        latest = Measurement.objects.filter(date__lte=today).order_by('-date')[0:1][0]
+        first_of_the_year = Measurement.objects.filter(date__gte=start_of_year).order_by('date')[0:1][0]
+        return first_of_the_year, latest
+
+    @property
+    def electricity_this_year(self):
+        first_of_the_year, latest = self.get_first_and_latest_measurements_of_this_year()
+        return latest.electricity_use_kwh - first_of_the_year.electricity_use_kwh
 
     def __unicode__(self):
         return self.label
@@ -130,6 +142,9 @@ class Measurement(BaseModel):
         if not result:
             return None
         return '{0:.2f}'.format(result)
+
+    def __unicode__(self):
+        return '{} {}'.format(self.location, self.date)
 
     class Meta:
         ordering = ['-date']

@@ -6,7 +6,7 @@ from .models import Location, Tariff, Measurement
 
 
 class LocationAdmin(admin.ModelAdmin):
-    list_display = ('label', )
+    list_display = ('label', 'electricity_this_year', )
     search_fields = ('label', 'address', )
 
 
