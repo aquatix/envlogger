@@ -133,3 +133,15 @@ class Measurement(BaseModel):
 
     class Meta:
         ordering = ['-date']
+
+
+class Tariff(BaseModel):
+    """Prices for energy, for a given period of time"""
+    location = models.ForeignKey(Location)
+
+    start_date = models.DateField()
+    end_date = models.DateField()
+
+    electricity = models.DecimalField(max_digits=9, decimal_places=4)
+    gas = models.DecimalField(max_digits=9, decimal_places=4)
+    water = models.DecimalField(max_digits=9, decimal_places=4)
