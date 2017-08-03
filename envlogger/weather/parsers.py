@@ -4,6 +4,7 @@ from .models import Observation
 from .utils import unix_to_python
 import forecastio
 from pyowm import OWM
+from pyowm.exceptions.api_call_error import APICallError as OWMAPICallError
 from pytz import UTC
 
 def get_wunderground_observation(config):
@@ -100,6 +101,9 @@ def get_openweathermap_observation(config):
         obs = owm.weather_at_place('{},{}'.format(config.city, config.country))
     except TypeError:
         print('Something went wrong while fetching OpenWeatherMap forecast for {}, {}'.format(config.city, config.country))
+        return None
+    except OWMAPICallError as e:
+        print('APICallError while fetching OpenWeatherMap forecast for {}, {}'.format(config.city, config.countr))
         return None
     w = obs.get_weather()
 
