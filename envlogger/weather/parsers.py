@@ -103,7 +103,7 @@ def get_openweathermap_observation(config):
         print('Something went wrong while fetching OpenWeatherMap forecast for {}, {}'.format(config.city, config.country))
         return None
     except OWMAPICallError as e:
-        print('APICallError while fetching OpenWeatherMap forecast for {}, {}'.format(config.city, config.countr))
+        print('APICallError while fetching OpenWeatherMap forecast for {}, {}'.format(config.city, config.country))
         return None
     w = obs.get_weather()
 
