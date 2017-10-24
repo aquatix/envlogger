@@ -3,6 +3,7 @@
 from __future__ import absolute_import
 
 import logging
+import traceback
 from .models import WeatherProvider, WeatherConfig, Observation
 from .parsers import (
     get_openweathermap_observation,
@@ -22,7 +23,11 @@ def get_observation_for_config(config):
 
     if result:
         #print(result.__dict__)
-        result.save()
+        try:
+            result.save()
+        except ValueError:
+            print result.__dict__
+            traceback.print_exc()
 
 def update_everything():
     configs = WeatherConfig.objects.filter(enabled=True)
