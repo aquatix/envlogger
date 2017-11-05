@@ -50,6 +50,7 @@ if DEBUGTOOLBAR:
 INSTALLED_APPS = [
     'energy',
     'fuel',
+    'serie',
     'temperature',
     'weather',
     'django.contrib.admin',
