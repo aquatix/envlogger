@@ -104,7 +104,7 @@ class Observation(BaseModel):
     cloud_coverage = models.IntegerField(null=True, blank=True)
     humidity = models.IntegerField(null=True, blank=True)
     ozone = models.FloatField(null=True, blank=True)  # Dobson units
-    uv_index = models.IntegerField(null=True, blank=True)
+    uv_index = models.FloatField(null=True, blank=True)
     visibility_mi = models.FloatField(null=True, blank=True)
     visibility_km = models.FloatField(null=True, blank=True)
 
