@@ -2,7 +2,9 @@
 Helper functions
 """
 from datetime import datetime
+
 from pytz import UTC
+
 
 def unix_to_python(timestamp, utc=True):
     """
@@ -16,4 +18,3 @@ def unix_to_python(timestamp, utc=True):
         if utc:
             tz = UTC
         return datetime.fromtimestamp(float(timestamp), tz)
-
