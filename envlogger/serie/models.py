@@ -14,7 +14,7 @@ class BaseModel(models.Model):
 
 
 class Serie(BaseModel):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     label = models.CharField(max_length=200)
     notes = models.CharField(max_length=512, null=True, blank=True)
 
@@ -23,7 +23,7 @@ class Serie(BaseModel):
 
 
 class Measurement(BaseModel):
-    serie = models.ForeignKey(Serie)
+    serie = models.ForeignKey(Serie, on_delete=models.CASCADE)
 
     date = models.DateTimeField()
     value = models.DecimalField(max_digits=9, decimal_places=2)

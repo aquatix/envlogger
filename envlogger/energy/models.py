@@ -17,7 +17,7 @@ class BaseModel(models.Model):
 
 
 class Location(BaseModel):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     label = models.CharField(max_length=200)
     address = models.CharField(max_length=255, null=True, blank=True)
     notes = models.CharField(max_length=512, null=True, blank=True)
@@ -39,7 +39,7 @@ class Location(BaseModel):
 
 
 class Measurement(BaseModel):
-    location = models.ForeignKey(Location)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE)
 
     date = models.DateTimeField()
 
@@ -152,7 +152,7 @@ class Measurement(BaseModel):
 
 class Tariff(BaseModel):
     """Prices for energy, for a given period of time"""
-    location = models.ForeignKey(Location)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE)
 
     start_date = models.DateField()
     end_date = models.DateField()

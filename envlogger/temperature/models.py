@@ -15,7 +15,7 @@ class BaseModel(models.Model):
 class TemperatureSerie(BaseModel):
     """Weather provider, like OpenWeatherMap, Darksky.net"""
 
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     label = models.CharField(max_length=200)
 
     def __unicode__(self):
@@ -24,7 +24,7 @@ class TemperatureSerie(BaseModel):
 
 class Measurement(BaseModel):
     """Measurement of a certain temperature probe"""
-    temperatureserie = models.ForeignKey(TemperatureSerie)
+    temperatureserie = models.ForeignKey(TemperatureSerie, on_delete=models.CASCADE)
 
     datetime = models.DateTimeField()
     value = models.FloatField()

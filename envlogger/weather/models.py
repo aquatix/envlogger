@@ -24,7 +24,7 @@ class WeatherProvider(BaseModel):
         (SOURCE_WUNDERGROUND, 'Weather Underground'),
     )
 
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     source = models.CharField(max_length=20, choices=SOURCE_OPTIONS, default=SOURCE_OPENWEATHERMAP)
     apikey = models.CharField(max_length=200)
     pro = models.BooleanField(default=False)
@@ -36,7 +36,7 @@ class WeatherProvider(BaseModel):
 
 class WeatherConfig(BaseModel):
     """Configuration for a specific WeatherProvider, with location and such"""
-    provider = models.ForeignKey(WeatherProvider)
+    provider = models.ForeignKey(WeatherProvider, on_delete=models.CASCADE)
     enabled = models.BooleanField(default=True)
 
     city = models.CharField(max_length=200, null=True, blank=True)
@@ -64,7 +64,7 @@ class WeatherConfig(BaseModel):
 
 class Observation(BaseModel):
     """Observation for a certain location"""
-    weatherconfig = models.ForeignKey(WeatherConfig)
+    weatherconfig = models.ForeignKey(WeatherConfig, on_delete=models.CASCADE)
 
     # Location
     country_iso3166 = models.CharField(max_length=3, null=True, blank=True)
