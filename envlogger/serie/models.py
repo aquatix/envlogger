@@ -21,6 +21,9 @@ class Serie(BaseModel):
     def __unicode__(self):
         return self.label
 
+    def __str__(self):
+        return self.__unicode__()
+
 
 class Measurement(BaseModel):
     serie = models.ForeignKey(Serie, on_delete=models.CASCADE)
@@ -31,6 +34,9 @@ class Measurement(BaseModel):
 
     def __unicode__(self):
         return '{} {} {}'.format(self.serie, self.date, self.value)
+
+    def __str__(self):
+        return self.__unicode__()
 
     class Meta:
         ordering = ['-date']

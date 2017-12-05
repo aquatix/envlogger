@@ -28,6 +28,9 @@ class Car(BaseModel):
     def __unicode__(self):
         return self.label
 
+    def __str__(self):
+        return self.__unicode__()
+
 
 class FuelStation(BaseModel):
     """Fuel station"""
@@ -39,6 +42,9 @@ class FuelStation(BaseModel):
 
     def __unicode__(self):
         return self.label
+
+    def __str__(self):
+        return self.__unicode__()
 
 
 class Refuelling(BaseModel):

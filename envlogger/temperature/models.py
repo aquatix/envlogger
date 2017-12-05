@@ -13,13 +13,16 @@ class BaseModel(models.Model):
 
 
 class TemperatureSerie(BaseModel):
-    """Weather provider, like OpenWeatherMap, Darksky.net"""
+    """Serie of measurements, like for a certain location"""
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     label = models.CharField(max_length=200)
 
     def __unicode__(self):
         return self.label
+
+    def __str__(self):
+        return self.__unicode__()
 
 
 class Measurement(BaseModel):

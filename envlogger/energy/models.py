@@ -37,6 +37,9 @@ class Location(BaseModel):
     def __unicode__(self):
         return self.label
 
+    def __str__(self):
+        return self.__unicode__()
+
 
 class Measurement(BaseModel):
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
@@ -145,6 +148,9 @@ class Measurement(BaseModel):
 
     def __unicode__(self):
         return '{} {}'.format(self.location, self.date)
+
+    def __str__(self):
+        return self.__unicode__()
 
     class Meta:
         ordering = ['-date']

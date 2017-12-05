@@ -33,6 +33,9 @@ class WeatherProvider(BaseModel):
         #return self.SOURCE_OPTIONS[self.source]
         return self.source
 
+    def __str__(self):
+        return self.__unicode__()
+
 
 class WeatherConfig(BaseModel):
     """Configuration for a specific WeatherProvider, with location and such"""
@@ -60,6 +63,9 @@ class WeatherConfig(BaseModel):
 
     def __unicode__(self):
         return '{} ({}, {})'.format(self.provider, self.city, self.country)
+
+    def __str__(self):
+        return self.__unicode__()
 
 
 class Observation(BaseModel):
