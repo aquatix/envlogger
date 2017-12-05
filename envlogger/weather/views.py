@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from django.http import HttpResponse
 
 from django.contrib.auth.models import User
-from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, render
 
-from .models import WeatherProvider, WeatherConfig
+from .models import WeatherConfig, WeatherProvider
+
 
 def index(request):
     return HttpResponse("Please provide a weather ID.")
@@ -34,6 +35,6 @@ def weatherdashboard(request, user_id):
         'graphs': graphs,
     }
 
-    print context
+    print(context)
 
     return render(request, 'dashboard.html', context)
