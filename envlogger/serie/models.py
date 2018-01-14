@@ -32,6 +32,23 @@ class Measurement(BaseModel):
     value = models.DecimalField(max_digits=9, decimal_places=2)
     notes = models.CharField(max_length=512, null=True, blank=True)
 
+    def get_previous(self):
+        previous_measurement = Measurement.objects.filter(serie=self.serie).filter(date__lt=self.date).order_by('-date')[0:1]
+        if not previous_measurement:
+            return None
+        return previous_measurement[0]
+
+    def diff_with_previous(self, previous):
+        if not previous:
+            return None
+        return self.value - previous.value
+
+    @property
+    def delta(self):
+        """ Delta with previous measurement """
+        previous = self.get_previous()
+        return self.diff_with_previous(previous)
+
     def __unicode__(self):
         return '{} {} {}'.format(self.serie, self.date, self.value)
 
