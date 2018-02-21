@@ -39,8 +39,8 @@ class FuelStation(BaseModel):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     label = models.CharField(max_length=200)
-    address = models.CharField(max_length=512)
-    notes = models.CharField(max_length=512)
+    address = models.CharField(max_length=512, null=True, blank=True)
+    notes = models.CharField(max_length=512, null=True, blank=True)
 
     def __unicode__(self):
         return self.label
