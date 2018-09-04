@@ -7,7 +7,7 @@
 certifi==2018.8.24        # via requests
 chardet==3.0.4            # via requests
 cookies==2.2.1            # via responses
-django==2.1
+django==2.1.1
 geojson==2.3.0            # via pyowm
 idna==2.7                 # via requests
 psycopg2-binary==2.7.5

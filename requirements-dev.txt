@@ -9,7 +9,7 @@ certifi==2018.8.24        # via requests
 chardet==3.0.4            # via requests
 cookies==2.2.1            # via responses
 django-debug-toolbar==1.9.1
-django==2.1
+django==2.1.1
 geojson==2.3.0            # via pyowm
 idna==2.7                 # via requests
 isort==4.3.4              # via pylint
