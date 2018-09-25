@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^<int:user_id>/dashboard/$', views.weatherdashboard, name='weatherdashboard'),
+    url(r'^<int:user_id>/dashboard/$', views.fueldashboard, name='fueldashboard'),
 ]

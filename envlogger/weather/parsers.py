@@ -1,11 +1,12 @@
-import json
-import requests
-from .models import Observation
-from .utils import unix_to_python
 import forecastio
+import requests
 from pyowm import OWM
 from pyowm.exceptions.api_call_error import APICallError as OWMAPICallError
 from pytz import UTC
+
+from .models import Observation
+from .utils import unix_to_python
+
 
 def get_wunderground_observation(config):
     """Weather Underground observation for current weather in location specified in config"""

@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-import decimal
+from datetime import date, datetime, timedelta
+
 from django.contrib.auth.models import User
 from django.db import models
-
-from datetime import timedelta, datetime, date
 
 
 class BaseModel(models.Model):
@@ -17,12 +16,13 @@ class BaseModel(models.Model):
 
 
 class Location(BaseModel):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     label = models.CharField(max_length=200)
     address = models.CharField(max_length=255, null=True, blank=True)
     notes = models.CharField(max_length=512, null=True, blank=True)
 
-    def get_first_and_latest_measurements_of_this_year(self):
+    @staticmethod
+    def get_first_and_latest_measurements_of_this_year():
         today = datetime.now()
         start_of_year = date(date.today().year, 1, 1)
         latest = Measurement.objects.filter(date__lte=today).order_by('-date')[0:1][0]
@@ -37,9 +37,12 @@ class Location(BaseModel):
     def __unicode__(self):
         return self.label
 
+    def __str__(self):
+        return self.__unicode__()
+
 
 class Measurement(BaseModel):
-    location = models.ForeignKey(Location)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE)
 
     date = models.DateTimeField()
 
@@ -55,8 +58,7 @@ class Measurement(BaseModel):
         previous_measurement = Measurement.objects.filter(date__lt=self.date).order_by('-date')[0:1]
         if not previous_measurement:
             return None
-        else:
-            return previous_measurement[0]
+        return previous_measurement[0]
 
     def diff_with_previous(self, previous):
         if not previous:
@@ -97,8 +99,7 @@ class Measurement(BaseModel):
         if self.electricity_out_kwh and previous.electricity_out_kwh:
             electricity_diff = float(self.electricity_out_kwh - previous.electricity_out_kwh)
             return electricity_diff / day_frac
-        else:
-            return None
+        return None
 
     @property
     def electricity_out_day(self):
@@ -146,13 +147,16 @@ class Measurement(BaseModel):
     def __unicode__(self):
         return '{} {}'.format(self.location, self.date)
 
+    def __str__(self):
+        return self.__unicode__()
+
     class Meta:
         ordering = ['-date']
 
 
 class Tariff(BaseModel):
     """Prices for energy, for a given period of time"""
-    location = models.ForeignKey(Location)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE)
 
     start_date = models.DateField()
     end_date = models.DateField()

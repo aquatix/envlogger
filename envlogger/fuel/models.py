@@ -2,8 +2,10 @@
 from __future__ import unicode_literals
 
 import decimal
+
 from django.contrib.auth.models import User
 from django.db import models
+
 
 class BaseModel(models.Model):
     created = models.DateTimeField(auto_now_add=True)
@@ -16,7 +18,7 @@ class BaseModel(models.Model):
 class Car(BaseModel):
     """Car"""
 
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     label = models.CharField(max_length=200)
     number_plate = models.CharField(max_length=20)
     make = models.CharField(max_length=30, null=True, blank=True)
@@ -28,24 +30,30 @@ class Car(BaseModel):
     def __unicode__(self):
         return self.label
 
+    def __str__(self):
+        return self.__unicode__()
+
 
 class FuelStation(BaseModel):
     """Fuel station"""
 
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     label = models.CharField(max_length=200)
-    address = models.CharField(max_length=512)
-    notes = models.CharField(max_length=512)
+    address = models.CharField(max_length=512, null=True, blank=True)
+    notes = models.CharField(max_length=512, null=True, blank=True)
 
     def __unicode__(self):
         return self.label
+
+    def __str__(self):
+        return self.__unicode__()
 
 
 class Refuelling(BaseModel):
     """Refuelling event"""
 
-    car = models.ForeignKey(Car)
-    station = models.ForeignKey(FuelStation)
+    car = models.ForeignKey(Car, on_delete=models.CASCADE)
+    station = models.ForeignKey(FuelStation, on_delete=models.CASCADE)
     date = models.DateTimeField()
     litres = models.DecimalField(max_digits=9, decimal_places=3)
     litre_price = models.DecimalField(max_digits=6, decimal_places=3)
@@ -88,6 +96,6 @@ class Refuelling(BaseModel):
 class Default(BaseModel):
     """Default Car and FuelStation for User"""
 
-    user = models.OneToOneField(User)
-    car = models.ForeignKey(Car)
-    station = models.ForeignKey(FuelStation)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    car = models.ForeignKey(Car, on_delete=models.CASCADE)
+    station = models.ForeignKey(FuelStation, on_delete=models.CASCADE)
