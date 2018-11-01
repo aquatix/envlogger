@@ -4,17 +4,16 @@
 #
 #    pip-compile --output-file requirements.txt requirements.in
 #
-biscuits==0.1.1           # via responses
 certifi==2018.10.15       # via requests
 chardet==3.0.4            # via requests
-django==2.1.2
+django==2.1.3
 geojson==2.3.0            # via pyowm
 idna==2.7                 # via requests
 psycopg2-binary==2.7.5
 pyowm==2.9.0
 python-forecastio==1.4.0
-pytz==2018.5              # via django
+pytz==2018.7              # via django
 requests==2.20.0
-responses==0.10.1         # via python-forecastio
+responses==0.10.2         # via python-forecastio
 six==1.11.0               # via responses
 urllib3==1.24             # via requests
