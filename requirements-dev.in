@@ -1,5 +1,6 @@
 -r requirements.in
 
+bpython
 django-debug-toolbar
 pylint
 pylint-django
