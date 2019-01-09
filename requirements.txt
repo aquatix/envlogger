@@ -4,12 +4,14 @@
 #
 #    pip-compile --output-file requirements.txt requirements.in
 #
+--no-binary psycopg2
+
 certifi==2018.11.29       # via requests
 chardet==3.0.4            # via requests
 django==2.1.5
 geojson==2.4.1            # via pyowm
 idna==2.8                 # via requests
-psycopg2-binary==2.7.6.1
+psycopg2==2.7.6.1
 pyowm==2.10.0
 python-forecastio==1.4.0
 pytz==2018.9              # via django

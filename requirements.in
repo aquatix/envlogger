@@ -1,5 +1,5 @@
 django
-psycopg2-binary
+psycopg2 --no-binary psycopg2
 pyowm
 python-forecastio
 requests
