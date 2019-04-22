@@ -64,6 +64,9 @@ class WeatherConfig(BaseModel):
     def __unicode__(self):
         return '{} ({}, {})'.format(self.provider, self.city, self.country)
 
+    def __repr__(self):
+        return f'WeatherConfig({self.provider}, {self.city}, {self.country})'
+
     def __str__(self):
         return self.__unicode__()
 

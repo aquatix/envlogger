@@ -48,6 +48,7 @@ if DEBUGTOOLBAR:
 # Application definition
 
 INSTALLED_APPS = [
+    'airquality',
     'energy',
     'fuel',
     'serie',
