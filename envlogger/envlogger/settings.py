@@ -166,7 +166,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-DATETIME_FORMAT = '%Y-%m-%d %H:%M'
+DATETIME_FORMAT = 'Y-m-d H:M'
 try:
     DATETIME_FORMAT = os.environ['ENVLOGGER_DATETIME_FORMAT']
     from django.conf.locale.en import formats as en_formats
