@@ -10,9 +10,15 @@ from .utils import unix_to_python
 
 def get_wunderground_observation(config):
     """Weather Underground observation for current weather in location specified in config"""
+    # Weather Underground currently is non-functional, might return in the future
+    return None
     url = 'http://api.wunderground.com/api/{}/geolookup/conditions/q/{}/{}.json'.format(config.provider.apikey, config.country, config.city)
     data = requests.get(url).json()
-    w = data['current_observation']
+    try:
+        w = data['current_observation']
+    except KeyError:
+        print('No Weather Underground observation found, aborting')
+        return None
 
     result = Observation(weatherconfig=config)
 
