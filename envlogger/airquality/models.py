@@ -64,6 +64,10 @@ class AQIObservation(BaseModel):
     location_country = models.CharField(max_length=20, null=True, blank=True)
     uri = models.CharField(max_length=500, null=True, blank=True)
 
+    @property
+    def readable_value(self):
+        return aqi_readable(self.aqi)
+
     def __repr__(self):
         return f'AQIObservation({self.aqi}, {self.server_update_time}, {self.location_name})'
 

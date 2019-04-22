@@ -9,7 +9,7 @@ class AQIConfigAdmin(admin.ModelAdmin):
 
 
 class AQIObservationAdmin(admin.ModelAdmin):
-    list_display = ('server_update_time', 'aqi', 'location_name', )
+    list_display = ('server_update_time', 'aqi', 'readable_value', 'location_name', )
     list_filter = ('location_name', 'location_code', )
 
 
