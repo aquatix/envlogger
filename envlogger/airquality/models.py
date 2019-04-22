@@ -16,7 +16,7 @@ def aqi_readable(aqi):
     return 'Hazardous'
 
 
-def aqi_color(aqi):
+def aqi_colour(aqi):
     if aqi <= 50:
         return '#009966'
     if aqi <= 100:
@@ -67,6 +67,10 @@ class AQIObservation(BaseModel):
     @property
     def readable_value(self):
         return aqi_readable(self.aqi)
+
+    @property
+    def colour(self):
+        return aqi_colour(self.aqi)
 
     def __repr__(self):
         return f'AQIObservation({self.aqi}, {self.server_update_time}, {self.location_name})'
