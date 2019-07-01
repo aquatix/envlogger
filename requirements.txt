@@ -6,12 +6,12 @@
 #
 --no-binary psycopg2
 
-certifi==2019.3.9         # via requests
+certifi==2019.6.16        # via requests
 chardet==3.0.4            # via requests
-django==2.2.2
+django==2.2.3
 geojson==2.4.1            # via pyowm
 idna==2.8                 # via requests
-psycopg2==2.8.2
+psycopg2==2.8.3
 pyowm==2.10.0
 python-forecastio==1.4.0
 pytz==2019.1              # via django
