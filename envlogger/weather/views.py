@@ -16,7 +16,7 @@ def weatherdashboard(request, user_id):
 
     if not request.user.is_authenticated:
         return redirect('login')
-    elif request.user != user:
+    if request.user != user:
         return HttpResponse("Not authorised!")
 
     weatherproviders = WeatherProvider.objects.filter(user=user)
