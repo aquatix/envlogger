@@ -14,7 +14,7 @@ certifi==2019.6.16        # via requests
 chardet==3.0.4            # via requests
 curtsies==0.3.0           # via bpython
 django-debug-toolbar==2.0
-django==2.2.3
+django==2.2.4
 geojson==2.4.1            # via pyowm
 greenlet==0.4.15          # via bpython
 idna==2.8                 # via requests
@@ -24,12 +24,12 @@ mccabe==0.6.1             # via pylint
 psycopg2==2.8.3
 pycodestyle==2.5.0        # via autopep8
 pygments==2.4.2           # via bpython
-pylint-django==2.0.9
+pylint-django==2.0.11
 pylint-plugin-utils==0.5  # via pylint-django
 pylint==2.3.1
 pyowm==2.10.0
 python-forecastio==1.4.0
-pytz==2019.1              # via django
+pytz==2019.2              # via django
 requests==2.22.0
 responses==0.10.6         # via python-forecastio
 six==1.12.0               # via astroid, blessings, bpython, responses
