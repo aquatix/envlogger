@@ -14,12 +14,12 @@ certifi==2019.6.16        # via requests
 chardet==3.0.4            # via requests
 curtsies==0.3.0           # via bpython
 django-debug-toolbar==2.0
-django==2.2.4
-geojson==2.4.1            # via pyowm
+django==2.2.5
+geojson==2.5.0            # via pyowm
 greenlet==0.4.15          # via bpython
 idna==2.8                 # via requests
 isort==4.3.21             # via pylint
-lazy-object-proxy==1.4.1  # via astroid
+lazy-object-proxy==1.4.2  # via astroid
 mccabe==0.6.1             # via pylint
 psycopg2==2.8.3
 pycodestyle==2.5.0        # via autopep8
@@ -35,7 +35,7 @@ responses==0.10.6         # via python-forecastio
 six==1.12.0               # via astroid, blessings, bpython, responses
 sqlparse==0.3.0           # via django, django-debug-toolbar
 typed-ast==1.4.0          # via astroid
-typing==3.7.4             # via curtsies
+typing==3.7.4.1           # via curtsies
 urllib3==1.25.3           # via requests
 wcwidth==0.1.7            # via curtsies
 wrapt==1.11.2             # via astroid

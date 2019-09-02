@@ -8,8 +8,8 @@
 
 certifi==2019.6.16        # via requests
 chardet==3.0.4            # via requests
-django==2.2.4
-geojson==2.4.1            # via pyowm
+django==2.2.5
+geojson==2.5.0            # via pyowm
 idna==2.8                 # via requests
 psycopg2==2.8.3
 pyowm==2.10.0
