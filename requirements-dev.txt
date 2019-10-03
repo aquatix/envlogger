@@ -6,15 +6,15 @@
 #
 --no-binary psycopg2
 
-astroid==2.2.5            # via pylint
+astroid==2.3.1            # via pylint
 autopep8==1.4.4
 blessings==1.7            # via curtsies
 bpython==0.18
-certifi==2019.6.16        # via requests
+certifi==2019.9.11        # via requests
 chardet==3.0.4            # via requests
 curtsies==0.3.0           # via bpython
 django-debug-toolbar==2.0
-django==2.2.5
+django==2.2.6
 geojson==2.5.0            # via pyowm
 greenlet==0.4.15          # via bpython
 idna==2.8                 # via requests
@@ -25,8 +25,8 @@ psycopg2==2.8.3
 pycodestyle==2.5.0        # via autopep8
 pygments==2.4.2           # via bpython
 pylint-django==2.0.11
-pylint-plugin-utils==0.5  # via pylint-django
-pylint==2.3.1
+pylint-plugin-utils==0.6  # via pylint-django
+pylint==2.4.2
 pyowm==2.10.0
 python-forecastio==1.4.0
 pytz==2019.2              # via django
@@ -36,6 +36,6 @@ six==1.12.0               # via astroid, blessings, bpython, responses
 sqlparse==0.3.0           # via django, django-debug-toolbar
 typed-ast==1.4.0          # via astroid
 typing==3.7.4.1           # via curtsies
-urllib3==1.25.3           # via requests
+urllib3==1.25.6           # via requests
 wcwidth==0.1.7            # via curtsies
 wrapt==1.11.2             # via astroid
