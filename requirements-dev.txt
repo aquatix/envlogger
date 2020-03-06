@@ -8,33 +8,33 @@
 
 asgiref==3.2.3            # via django
 astroid==2.3.3            # via pylint
-autopep8==1.5
+autopep8==1.5             # via -r requirements-dev.in
 blessings==1.7            # via curtsies
-bpython==0.18
+bpython==0.18             # via -r requirements-dev.in
 certifi==2019.11.28       # via requests
 chardet==3.0.4            # via requests
 curtsies==0.3.1           # via bpython
-django-debug-toolbar==2.2
-django==3.0.3
+django-debug-toolbar==2.2  # via -r requirements-dev.in
+django==3.0.4             # via -r requirements.in, django-debug-toolbar
 geojson==2.5.0            # via pyowm
 greenlet==0.4.15          # via bpython
-idna==2.8                 # via requests
+idna==2.9                 # via requests
 isort==4.3.21             # via pylint
 lazy-object-proxy==1.4.3  # via astroid
 mccabe==0.6.1             # via pylint
-psycopg2==2.8.4
+psycopg2==2.8.4           # via -r requirements.in
 pycodestyle==2.5.0        # via autopep8
 pygments==2.5.2           # via bpython
-pylint-django==2.0.13
+pylint-django==2.0.14     # via -r requirements-dev.in
 pylint-plugin-utils==0.6  # via pylint-django
-pylint==2.4.4
-pyowm==2.10.0
-python-forecastio==1.4.0
+pylint==2.4.4             # via -r requirements-dev.in, pylint-django, pylint-plugin-utils
+pyowm==2.10.0             # via -r requirements.in
+python-forecastio==1.4.0  # via -r requirements.in
 pytz==2019.3              # via django
-requests==2.22.0
-responses==0.10.9         # via python-forecastio
-six==1.14.0               # via astroid, blessings, bpython, responses
-sqlparse==0.3.0           # via django, django-debug-toolbar
+requests==2.23.0          # via -r requirements.in, bpython, pyowm, python-forecastio, responses
+responses==0.10.12        # via python-forecastio
+six==1.14.0               # via astroid, bpython, responses
+sqlparse==0.3.1           # via django, django-debug-toolbar
 typed-ast==1.4.1          # via astroid
 urllib3==1.25.8           # via requests
 wcwidth==0.1.8            # via curtsies
