@@ -7,17 +7,18 @@
 --no-binary psycopg2
 
 asgiref==3.2.7            # via django
-certifi==2019.11.28       # via requests
+certifi==2020.4.5.2       # via requests
 chardet==3.0.4            # via requests
-django==3.0.5             # via -r requirements.in
+django==3.0.7             # via -r requirements.in
 geojson==2.5.0            # via pyowm
 idna==2.9                 # via requests
-psycopg2==2.8.4           # via -r requirements.in
-pyowm==2.10.0             # via -r requirements.in
+psycopg2==2.8.5           # via -r requirements.in
+pyowm==3.0.0              # via -r requirements.in
+pysocks==1.7.1            # via pyowm, requests
 python-forecastio==1.4.0  # via -r requirements.in
-pytz==2019.3              # via django
-requests==2.23.0          # via -r requirements.in, pyowm, python-forecastio, responses
-responses==0.10.12        # via python-forecastio
-six==1.14.0               # via responses
+pytz==2020.1              # via django
+requests[socks]==2.23.0   # via -r requirements.in, pyowm, python-forecastio, responses
+responses==0.10.14        # via python-forecastio
+six==1.15.0               # via responses
 sqlparse==0.3.1           # via django
-urllib3==1.25.8           # via requests
+urllib3==1.25.9           # via requests

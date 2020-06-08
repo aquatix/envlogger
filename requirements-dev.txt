@@ -7,35 +7,36 @@
 --no-binary psycopg2
 
 asgiref==3.2.7            # via django
-astroid==2.3.3            # via pylint
-autopep8==1.5             # via -r requirements-dev.in
+astroid==2.4.2            # via pylint
+autopep8==1.5.3           # via -r requirements-dev.in
 blessings==1.7            # via curtsies
 bpython==0.19             # via -r requirements-dev.in
-certifi==2019.11.28       # via requests
+certifi==2020.4.5.2       # via requests
 chardet==3.0.4            # via requests
 curtsies==0.3.1           # via bpython
 django-debug-toolbar==2.2  # via -r requirements-dev.in
-django==3.0.5             # via -r requirements.in, django-debug-toolbar
+django==3.0.7             # via -r requirements.in, django-debug-toolbar
 geojson==2.5.0            # via pyowm
-greenlet==0.4.15          # via bpython
+greenlet==0.4.16          # via bpython
 idna==2.9                 # via requests
 isort==4.3.21             # via pylint
 lazy-object-proxy==1.4.3  # via astroid
 mccabe==0.6.1             # via pylint
-psycopg2==2.8.4           # via -r requirements.in
-pycodestyle==2.5.0        # via autopep8
+psycopg2==2.8.5           # via -r requirements.in
+pycodestyle==2.6.0        # via autopep8
 pygments==2.6.1           # via bpython
-pylint-django==2.0.14     # via -r requirements-dev.in
+pylint-django==2.0.15     # via -r requirements-dev.in
 pylint-plugin-utils==0.6  # via pylint-django
-pylint==2.4.4             # via -r requirements-dev.in, pylint-django, pylint-plugin-utils
-pyowm==2.10.0             # via -r requirements.in
+pylint==2.5.3             # via -r requirements-dev.in, pylint-django, pylint-plugin-utils
+pyowm==3.0.0              # via -r requirements.in
+pysocks==1.7.1            # via pyowm, requests
 python-forecastio==1.4.0  # via -r requirements.in
-pytz==2019.3              # via django
-requests==2.23.0          # via -r requirements.in, bpython, pyowm, python-forecastio, responses
-responses==0.10.12        # via python-forecastio
-six==1.14.0               # via astroid, bpython, responses
+pytz==2020.1              # via django
+requests[socks]==2.23.0   # via -r requirements.in, bpython, pyowm, python-forecastio, responses
+responses==0.10.14        # via python-forecastio
+six==1.15.0               # via astroid, bpython, responses
 sqlparse==0.3.1           # via django, django-debug-toolbar
-typed-ast==1.4.1          # via astroid
-urllib3==1.25.8           # via requests
-wcwidth==0.1.9            # via curtsies
-wrapt==1.11.2             # via astroid
+toml==0.10.1              # via autopep8, pylint
+urllib3==1.25.9           # via requests
+wcwidth==0.2.4            # via curtsies
+wrapt==1.12.1             # via astroid
