@@ -28,11 +28,10 @@ pygments==2.6.1           # via bpython
 pylint-django==2.0.15     # via -r requirements-dev.in
 pylint-plugin-utils==0.6  # via pylint-django
 pylint==2.5.3             # via -r requirements-dev.in, pylint-django, pylint-plugin-utils
-pyowm==3.0.0              # via -r requirements.in
-pysocks==1.7.1            # via pyowm, requests
+pyowm==2.10.0             # via -r requirements.in
 python-forecastio==1.4.0  # via -r requirements.in
 pytz==2020.1              # via django
-requests[socks]==2.24.0   # via -r requirements.in, bpython, pyowm, python-forecastio, responses
+requests==2.24.0          # via -r requirements.in, bpython, pyowm, python-forecastio, responses
 responses==0.10.15        # via python-forecastio
 six==1.15.0               # via astroid, bpython, responses
 sqlparse==0.3.1           # via django, django-debug-toolbar
