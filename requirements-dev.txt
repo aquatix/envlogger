@@ -6,12 +6,12 @@
 #
 --no-binary psycopg2
 
-asgiref==3.2.7            # via django
+asgiref==3.2.10           # via django
 astroid==2.4.2            # via pylint
 autopep8==1.5.3           # via -r requirements-dev.in
 blessings==1.7            # via curtsies
 bpython==0.19             # via -r requirements-dev.in
-certifi==2020.4.5.2       # via requests
+certifi==2020.6.20        # via requests
 chardet==3.0.4            # via requests
 curtsies==0.3.1           # via bpython
 django-debug-toolbar==2.2  # via -r requirements-dev.in
@@ -32,8 +32,8 @@ pyowm==3.0.0              # via -r requirements.in
 pysocks==1.7.1            # via pyowm, requests
 python-forecastio==1.4.0  # via -r requirements.in
 pytz==2020.1              # via django
-requests[socks]==2.23.0   # via -r requirements.in, bpython, pyowm, python-forecastio, responses
-responses==0.10.14        # via python-forecastio
+requests[socks]==2.24.0   # via -r requirements.in, bpython, pyowm, python-forecastio, responses
+responses==0.10.15        # via python-forecastio
 six==1.15.0               # via astroid, bpython, responses
 sqlparse==0.3.1           # via django, django-debug-toolbar
 toml==0.10.1              # via autopep8, pylint
