@@ -9,7 +9,7 @@
 asgiref==3.2.10           # via django
 certifi==2020.6.20        # via requests
 chardet==3.0.4            # via requests
-django==3.0.7             # via -r requirements.in
+django==3.0.10             # via -r requirements.in
 geojson==2.5.0            # via pyowm
 idna==2.9                 # via requests
 psycopg2==2.8.5           # via -r requirements.in
