@@ -8,9 +8,9 @@
 
 asgiref==3.3.1
     # via django
-astroid==2.4.2
+astroid==2.5.1
     # via pylint
-autopep8==1.5.5
+autopep8==1.5.6
     # via -r requirements-dev.in
 blessings==1.7
     # via curtsies
@@ -22,13 +22,13 @@ chardet==4.0.0
     # via requests
 curtsies==0.3.5
     # via bpython
-cwcwidth==0.1.2
+cwcwidth==0.1.4
     # via
     #   bpython
     #   curtsies
 django-debug-toolbar==3.2
     # via -r requirements-dev.in
-django==3.1.6
+django==3.1.7
     # via
     #   -r requirements.in
     #   django-debug-toolbar
@@ -40,21 +40,21 @@ idna==2.10
     # via requests
 isort==5.7.0
     # via pylint
-lazy-object-proxy==1.4.3
+lazy-object-proxy==1.5.2
     # via astroid
 mccabe==0.6.1
     # via pylint
 psycopg2==2.8.6
     # via -r requirements.in
-pycodestyle==2.6.0
+pycodestyle==2.7.0
     # via autopep8
-pygments==2.7.4
+pygments==2.8.1
     # via bpython
 pylint-django==2.4.2
     # via -r requirements-dev.in
 pylint-plugin-utils==0.6
     # via pylint-django
-pylint==2.6.0
+pylint==2.7.2
     # via
     #   -r requirements-dev.in
     #   pylint-django
@@ -74,12 +74,10 @@ requests==2.25.1
     #   pyowm
     #   python-forecastio
     #   responses
-responses==0.12.1
+responses==0.13.1
     # via python-forecastio
 six==1.15.0
-    # via
-    #   astroid
-    #   responses
+    # via responses
 sqlparse==0.4.1
     # via
     #   django
@@ -88,7 +86,7 @@ toml==0.10.2
     # via
     #   autopep8
     #   pylint
-urllib3==1.26.3
+urllib3==1.26.4
     # via
     #   requests
     #   responses

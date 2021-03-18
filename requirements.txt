@@ -12,7 +12,7 @@ certifi==2020.12.5
     # via requests
 chardet==4.0.0
     # via requests
-django==3.1.6
+django==3.1.7
     # via -r requirements.in
 geojson==2.5.0
     # via pyowm
@@ -32,13 +32,13 @@ requests==2.25.1
     #   pyowm
     #   python-forecastio
     #   responses
-responses==0.12.1
+responses==0.13.1
     # via python-forecastio
 six==1.15.0
     # via responses
 sqlparse==0.4.1
     # via django
-urllib3==1.26.3
+urllib3==1.26.4
     # via
     #   requests
     #   responses
