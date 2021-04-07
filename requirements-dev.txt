@@ -6,9 +6,9 @@
 #
 --no-binary psycopg2
 
-asgiref==3.3.1
+asgiref==3.3.4
     # via django
-astroid==2.5.1
+astroid==2.5.2
     # via pylint
 autopep8==1.5.6
     # via -r requirements-dev.in
@@ -28,7 +28,7 @@ cwcwidth==0.1.4
     #   curtsies
 django-debug-toolbar==3.2
     # via -r requirements-dev.in
-django==3.1.7
+django==3.2
     # via
     #   -r requirements.in
     #   django-debug-toolbar
@@ -38,9 +38,9 @@ greenlet==1.0.0
     # via bpython
 idna==2.10
     # via requests
-isort==5.7.0
+isort==5.8.0
     # via pylint
-lazy-object-proxy==1.5.2
+lazy-object-proxy==1.6.0
     # via astroid
 mccabe==0.6.1
     # via pylint
@@ -54,7 +54,7 @@ pylint-django==2.4.2
     # via -r requirements-dev.in
 pylint-plugin-utils==0.6
     # via pylint-django
-pylint==2.7.2
+pylint==2.7.4
     # via
     #   -r requirements-dev.in
     #   pylint-django
@@ -74,7 +74,7 @@ requests==2.25.1
     #   pyowm
     #   python-forecastio
     #   responses
-responses==0.13.1
+responses==0.13.2
     # via python-forecastio
 six==1.15.0
     # via responses
