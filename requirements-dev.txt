@@ -8,9 +8,9 @@
 
 asgiref==3.3.4
     # via django
-astroid==2.5.2
+astroid==2.5.6
     # via pylint
-autopep8==1.5.6
+autopep8==1.5.7
     # via -r requirements-dev.in
 blessings==1.7
     # via curtsies
@@ -26,15 +26,15 @@ cwcwidth==0.1.4
     # via
     #   bpython
     #   curtsies
-django-debug-toolbar==3.2
+django-debug-toolbar==3.2.1
     # via -r requirements-dev.in
-django==3.2
+django==3.2.2
     # via
     #   -r requirements.in
     #   django-debug-toolbar
 geojson==2.5.0
     # via pyowm
-greenlet==1.0.0
+greenlet==1.1.0
     # via bpython
 idna==2.10
     # via requests
@@ -48,13 +48,13 @@ psycopg2==2.8.6
     # via -r requirements.in
 pycodestyle==2.7.0
     # via autopep8
-pygments==2.8.1
+pygments==2.9.0
     # via bpython
-pylint-django==2.4.2
+pylint-django==2.4.4
     # via -r requirements-dev.in
 pylint-plugin-utils==0.6
     # via pylint-django
-pylint==2.7.4
+pylint==2.8.2
     # via
     #   -r requirements-dev.in
     #   pylint-django
@@ -74,9 +74,9 @@ requests==2.25.1
     #   pyowm
     #   python-forecastio
     #   responses
-responses==0.13.2
+responses==0.13.3
     # via python-forecastio
-six==1.15.0
+six==1.16.0
     # via responses
 sqlparse==0.4.1
     # via
