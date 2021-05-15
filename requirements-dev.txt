@@ -28,7 +28,7 @@ cwcwidth==0.1.4
     #   curtsies
 django-debug-toolbar==3.2.1
     # via -r requirements-dev.in
-django==3.2.2
+django==3.2.3
     # via
     #   -r requirements.in
     #   django-debug-toolbar
