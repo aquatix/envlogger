@@ -36,7 +36,7 @@ responses==0.13.3
     # via python-forecastio
 six==1.16.0
     # via responses
-sqlparse==0.4.1
+sqlparse==0.4.2
     # via django
 urllib3==1.26.6
     # via
