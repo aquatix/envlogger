@@ -52,7 +52,7 @@ class Measurement(BaseModel):
         return self.diff_with_previous(previous)
 
     @property
-    def delta_per_day(self):
+    def delta_per_day_float(self):
         """ Delta per day with previous measurement """
         previous = self.get_previous()
         value_diff = self.delta
@@ -60,6 +60,13 @@ class Measurement(BaseModel):
         day_diff = timedelta(days=1)
         day_frac = float(dates_diff.total_seconds()) / float(day_diff.total_seconds())
         return value_diff / day_frac
+
+    @property
+    def delta_per_day(self):
+        result = self.delta_per_day_float
+        if not result:
+            return None
+        return f"{result:.2f}"
 
     def __unicode__(self):
         return '{} {} {}'.format(self.serie, self.date, self.value)
