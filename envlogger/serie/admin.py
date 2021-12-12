@@ -11,7 +11,7 @@ class SerieAdmin(admin.ModelAdmin):
 
 
 class MeasurementAdmin(admin.ModelAdmin):
-    list_display = ('serie', 'date', 'value', 'delta', )
+    list_display = ('serie', 'date', 'value', 'delta', 'delta_per_day', )
     search_fields = ('value', 'notes', )
     list_filter = ('serie', )
 

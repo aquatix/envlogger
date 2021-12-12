@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from datetime import date, datetime, timedelta
+
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -48,6 +50,16 @@ class Measurement(BaseModel):
         """ Delta with previous measurement """
         previous = self.get_previous()
         return self.diff_with_previous(previous)
+
+    @property
+    def delta_per_day(self):
+        """ Delta per day with previous measurement """
+        previous = self.get_previous()
+        value_diff = self.delta
+        dates_diff = self.date - previous.date
+        day_diff = timedelta(days=1)
+        day_frac = float(dates_diff.total_seconds()) / float(day_diff.total_seconds())
+        return value_diff / day_frac
 
     def __unicode__(self):
         return '{} {} {}'.format(self.serie, self.date, self.value)
