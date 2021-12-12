@@ -59,7 +59,7 @@ class Measurement(BaseModel):
         dates_diff = self.date - previous.date
         day_diff = timedelta(days=1)
         day_frac = float(dates_diff.total_seconds()) / float(day_diff.total_seconds())
-        return value_diff / day_frac
+        return float(value_diff) / day_frac
 
     @property
     def delta_per_day(self):
