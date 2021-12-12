@@ -8,49 +8,51 @@
 
 asgiref==3.4.1
     # via django
-astroid==2.6.2
+astroid==2.9.0
     # via pylint
-autopep8==1.5.7
+autopep8==1.6.0
     # via -r requirements-dev.in
 blessings==1.7
     # via curtsies
-bpython==0.21
+bpython==0.22.1
     # via -r requirements-dev.in
-certifi==2021.5.30
+certifi==2021.10.8
     # via requests
-chardet==4.0.0
+charset-normalizer==2.0.9
     # via requests
-curtsies==0.3.5
+curtsies==0.3.10
     # via bpython
-cwcwidth==0.1.4
+cwcwidth==0.1.5
     # via
     #   bpython
     #   curtsies
-django==3.2.5
+django==4.0
     # via
     #   -r requirements.in
     #   django-debug-toolbar
-django-debug-toolbar==3.2.1
+django-debug-toolbar==3.2.2
     # via -r requirements-dev.in
 geojson==2.5.0
     # via pyowm
-greenlet==1.1.0
+greenlet==1.1.2
     # via bpython
-idna==2.10
+idna==3.3
     # via requests
-isort==5.9.1
+isort==5.10.1
     # via pylint
 lazy-object-proxy==1.6.0
     # via astroid
 mccabe==0.6.1
     # via pylint
-psycopg2==2.9.1
+platformdirs==2.4.0
+    # via pylint
+psycopg2==2.9.2
     # via -r requirements.in
-pycodestyle==2.7.0
+pycodestyle==2.8.0
     # via autopep8
-pygments==2.9.0
+pygments==2.10.0
     # via bpython
-pylint==2.9.3
+pylint==2.12.2
     # via
     #   -r requirements-dev.in
     #   pylint-django
@@ -63,22 +65,20 @@ pyowm==2.10.0
     # via -r requirements.in
 python-forecastio==1.4.0
     # via -r requirements.in
-pytz==2021.1
-    # via django
 pyxdg==0.27
     # via bpython
-requests==2.25.1
+requests==2.26.0
     # via
     #   -r requirements.in
     #   bpython
     #   pyowm
     #   python-forecastio
     #   responses
-responses==0.13.3
+responses==0.16.0
     # via python-forecastio
 six==1.16.0
     # via responses
-sqlparse==0.4.1
+sqlparse==0.4.2
     # via
     #   django
     #   django-debug-toolbar
@@ -86,9 +86,17 @@ toml==0.10.2
     # via
     #   autopep8
     #   pylint
-urllib3==1.26.6
+typing-extensions==4.0.1
+    # via
+    #   astroid
+    #   bpython
+    #   pylint
+urllib3==1.26.7
     # via
     #   requests
     #   responses
-wrapt==1.12.1
+wrapt==1.13.3
     # via astroid
+
+# The following packages are considered to be unsafe in a requirements file:
+# setuptools
