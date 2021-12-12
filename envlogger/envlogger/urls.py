@@ -14,19 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf import settings
-from django.conf.urls import include, url
+from django.urls import include, path
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^energy/', include('energy.urls')),
-    url(r'^fuel/', include('fuel.urls')),
-    url(r'^serie/', include('serie.urls')),
-    url(r'^weather/', include('weather.urls')),
-    url(r'^admin/', admin.site.urls),
+    path(r'^energy/', include('energy.urls')),
+    path(r'^fuel/', include('fuel.urls')),
+    path(r'^serie/', include('serie.urls')),
+    path(r'^weather/', include('weather.urls')),
+    path(r'^admin/', admin.site.urls),
 ]
 
 if settings.DEBUGTOOLBAR:
     import debug_toolbar
     urlpatterns = [
-        url(r'^__debug__/', include(debug_toolbar.urls)),
+        path(r'^__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
