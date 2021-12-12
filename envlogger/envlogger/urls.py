@@ -18,15 +18,15 @@ from django.urls import include, path
 from django.contrib import admin
 
 urlpatterns = [
-    path(r'^energy/', include('energy.urls')),
-    path(r'^fuel/', include('fuel.urls')),
-    path(r'^serie/', include('serie.urls')),
-    path(r'^weather/', include('weather.urls')),
-    path(r'^admin/', admin.site.urls),
+    path('energy/', include('energy.urls')),
+    path('fuel/', include('fuel.urls')),
+    path('serie/', include('serie.urls')),
+    path('weather/', include('weather.urls')),
+    path('admin/', admin.site.urls),
 ]
 
 if settings.DEBUGTOOLBAR:
     import debug_toolbar
     urlpatterns = [
-        path(r'^__debug__/', include(debug_toolbar.urls)),
+        path('__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
