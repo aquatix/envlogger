@@ -30,7 +30,7 @@ django==4.0
     # via
     #   -r requirements.in
     #   django-debug-toolbar
-django-debug-toolbar==3.2.2
+django-debug-toolbar==3.2.4
     # via -r requirements-dev.in
 geojson==2.5.0
     # via pyowm
@@ -40,7 +40,7 @@ idna==3.3
     # via requests
 isort==5.10.1
     # via pylint
-lazy-object-proxy==1.6.0
+lazy-object-proxy==1.7.1
     # via astroid
 mccabe==0.6.1
     # via pylint
