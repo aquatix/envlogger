@@ -1,8 +1,9 @@
+from datetime import timezone
+
 import forecastio
 import requests
 from pyowm import OWM
 from pyowm.exceptions.api_call_error import APICallError as OWMAPICallError
-from pytz import UTC
 
 from .models import Observation
 from .utils import unix_to_python
@@ -176,6 +177,7 @@ def get_openweathermap_observation(config):
 
     return result
 
+
 def get_darksky_observation(config):
     """DarkSky.net observation for current weather in location specified in config"""
     result = Observation(weatherconfig=config)
@@ -194,7 +196,7 @@ def get_darksky_observation(config):
     result.elevation
 
     result.observation_time_rfc822
-    result.observation_epoch = w.time.replace(tzinfo=UTC)
+    result.observation_epoch = w.time.replace(tzinfo=timezone.utc)
 
     try:
         result.sunrise_time = unix_to_python(daily.sunriseTime)
