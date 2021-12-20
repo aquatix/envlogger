@@ -2,10 +2,11 @@
 # https://github.com/czesiekhaker/aqicn-status
 #
 # Distributed under terms of the MIT license.
+from datetime import datetime, timezone
+
 import requests
 
 from .models import AQIObservation
-from .util import load_datetime
 
 
 def get_aqi_for_city(config):
@@ -26,7 +27,7 @@ def get_aqi_for_city(config):
         newaqi.location_country = result['c']
     except KeyError:
         pass
-    newaqi.server_update_time = load_datetime('{}{}'.format(result['t'][0], result['t'][1]), '%Y-%m-%d %H:%M:%S%z')
+    newaqi.server_update_time = datetime.strptime(f"{result['t'][0]}{result['t'][1]}", '%Y-%m-%d %H:%M:%S%z').replace(tzinfo=timezone.utc)
     newaqi.uri = 'https://aqicn.org/city/' + result['u']
 
     return newaqi

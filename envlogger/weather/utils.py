@@ -1,9 +1,7 @@
 """
 Helper functions
 """
-from datetime import datetime
-
-from pytz import UTC
+from datetime import datetime, timezone
 
 
 def unix_to_python(timestamp, utc=True):
@@ -16,5 +14,5 @@ def unix_to_python(timestamp, utc=True):
     else:
         tz = None
         if utc:
-            tz = UTC
+            tz = timezone.utc
         return datetime.fromtimestamp(float(timestamp), tz)
