@@ -20,7 +20,11 @@ def get_aqi_for_city(config):
 
     newaqi = AQIObservation(aqiconfig=config)
 
-    newaqi.aqi = int(result['a'])
+    try:
+        newaqi.aqi = int(result['a'])
+    except ValueError:
+        # No int value was provided (probably a '-'), so skip
+        pass
     newaqi.location_name = result['n'][0]
     newaqi.location_code = result['u']
     try:
