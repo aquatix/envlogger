@@ -10,7 +10,7 @@ from .models import AQIObservation
 
 
 def get_aqi_for_city(config):
-    waqi_url = 'https://wind.waqi.info/nsearch/full/{}?n=12'.format(config.city)
+    waqi_url = f"https://wind.waqi.info/nsearch/full/{config.city}?n=12"
     response = requests.get(waqi_url)
     try:
         result = response.json()['results'][0]['s']
@@ -28,6 +28,6 @@ def get_aqi_for_city(config):
     except KeyError:
         pass
     newaqi.server_update_time = datetime.strptime(f"{result['t'][0]}{result['t'][1]}", '%Y-%m-%d %H:%M:%S%z').replace(tzinfo=timezone.utc)
-    newaqi.uri = 'https://aqicn.org/city/' + result['u']
+    newaqi.uri = f"https://aqicn.org/city/{result['u']}"
 
     return newaqi
