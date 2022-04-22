@@ -26,7 +26,7 @@ cwcwidth==0.1.6
     # via
     #   bpython
     #   curtsies
-django==4.0.1
+django==4.0.4
     # via
     #   -r requirements.in
     #   django-debug-toolbar
@@ -87,10 +87,7 @@ toml==0.10.2
     #   autopep8
     #   pylint
 typing-extensions==4.0.1
-    # via
-    #   astroid
-    #   bpython
-    #   pylint
+    # via bpython
 urllib3==1.26.7
     # via
     #   requests
