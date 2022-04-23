@@ -6,13 +6,13 @@
 #
 --no-binary psycopg2
 
-asgiref==3.4.1
+asgiref==3.5.0
     # via django
 certifi==2021.10.8
     # via requests
-charset-normalizer==2.0.10
+charset-normalizer==2.0.12
     # via requests
-django==4.0.1
+django==4.0.4
     # via -r requirements.in
 geojson==2.5.0
     # via pyowm
@@ -24,19 +24,17 @@ pyowm==2.10.0
     # via -r requirements.in
 python-forecastio==1.4.0
     # via -r requirements.in
-requests==2.27.0
+requests==2.27.1
     # via
     #   -r requirements.in
     #   pyowm
     #   python-forecastio
     #   responses
-responses==0.16.0
+responses==0.20.0
     # via python-forecastio
-six==1.16.0
-    # via responses
 sqlparse==0.4.2
     # via django
-urllib3==1.26.7
+urllib3==1.26.9
     # via
     #   requests
     #   responses

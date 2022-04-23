@@ -6,9 +6,9 @@
 #
 --no-binary psycopg2
 
-asgiref==3.4.1
+asgiref==3.5.0
     # via django
-astroid==2.9.2
+astroid==2.11.3
     # via pylint
 autopep8==1.6.0
     # via -r requirements-dev.in
@@ -18,7 +18,7 @@ bpython==0.22.1
     # via -r requirements-dev.in
 certifi==2021.10.8
     # via requests
-charset-normalizer==2.0.10
+charset-normalizer==2.0.12
     # via requests
 curtsies==0.3.10
     # via bpython
@@ -26,7 +26,9 @@ cwcwidth==0.1.6
     # via
     #   bpython
     #   curtsies
-django==4.0.1
+dill==0.3.4
+    # via pylint
+django==4.0.4
     # via
     #   -r requirements.in
     #   django-debug-toolbar
@@ -42,22 +44,22 @@ isort==5.10.1
     # via pylint
 lazy-object-proxy==1.7.1
     # via astroid
-mccabe==0.6.1
+mccabe==0.7.0
     # via pylint
-platformdirs==2.4.1
+platformdirs==2.5.2
     # via pylint
 psycopg2==2.9.3
     # via -r requirements.in
 pycodestyle==2.8.0
     # via autopep8
-pygments==2.11.1
+pygments==2.11.2
     # via bpython
-pylint==2.12.2
+pylint==2.13.7
     # via
     #   -r requirements-dev.in
     #   pylint-django
     #   pylint-plugin-utils
-pylint-django==2.5.0
+pylint-django==2.5.3
     # via -r requirements-dev.in
 pylint-plugin-utils==0.7
     # via pylint-django
@@ -67,35 +69,35 @@ python-forecastio==1.4.0
     # via -r requirements.in
 pyxdg==0.27
     # via bpython
-requests==2.27.0
+requests==2.27.1
     # via
     #   -r requirements.in
     #   bpython
     #   pyowm
     #   python-forecastio
     #   responses
-responses==0.16.0
+responses==0.20.0
     # via python-forecastio
 six==1.16.0
-    # via responses
+    # via blessings
 sqlparse==0.4.2
     # via
     #   django
     #   django-debug-toolbar
 toml==0.10.2
-    # via
-    #   autopep8
-    #   pylint
-typing-extensions==4.0.1
+    # via autopep8
+tomli==2.0.1
+    # via pylint
+typing-extensions==4.2.0
     # via
     #   astroid
     #   bpython
     #   pylint
-urllib3==1.26.7
+urllib3==1.26.9
     # via
     #   requests
     #   responses
-wrapt==1.13.3
+wrapt==1.14.0
     # via astroid
 
 # The following packages are considered to be unsafe in a requirements file:
