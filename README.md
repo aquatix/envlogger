@@ -1,5 +1,8 @@
 # envlogger
+
 Log environmental information, like weather, temperatures at locations and of devices, traffic and more.
+
+Keep track of fuel refills of your car, energy and water usage of your home.
 
 
 ## Installation
