@@ -28,7 +28,7 @@ cwcwidth==0.1.8
     #   curtsies
 dill==0.3.6
     # via pylint
-django==4.1.6
+django==4.1.7
     # via
     #   -r requirements.in
     #   django-debug-toolbar
@@ -86,16 +86,10 @@ sqlparse==0.4.3
     #   django-debug-toolbar
 toml==0.10.2
     # via responses
-tomli==2.0.1
-    # via
-    #   autopep8
-    #   pylint
 tomlkit==0.11.6
     # via pylint
 types-toml==0.10.8.2
     # via responses
-typing-extensions==4.4.0
-    # via astroid
 urllib3==1.26.14
     # via
     #   requests
