@@ -6,9 +6,9 @@
 #
 --no-binary psycopg2
 
-asgiref==3.7.0
+asgiref==3.7.2
     # via django
-astroid==2.15.5
+astroid==2.15.6
     # via pylint
 autopep8==2.0.2
     # via -r requirements-dev.in
@@ -18,7 +18,7 @@ bpython==0.24
     # via -r requirements-dev.in
 certifi==2023.5.7
     # via requests
-charset-normalizer==3.1.0
+charset-normalizer==3.2.0
     # via requests
 curtsies==0.4.1
     # via bpython
@@ -28,7 +28,7 @@ cwcwidth==0.1.8
     #   curtsies
 dill==0.3.6
     # via pylint
-django==4.2.1
+django==4.2.3
     # via
     #   -r requirements.in
     #   django-debug-toolbar
@@ -46,7 +46,7 @@ lazy-object-proxy==1.9.0
     # via astroid
 mccabe==0.7.0
     # via pylint
-platformdirs==3.5.1
+platformdirs==3.8.1
     # via pylint
 psycopg2==2.9.6
     # via -r requirements.in
@@ -94,11 +94,11 @@ tomlkit==0.11.8
     # via pylint
 types-pyyaml==6.0.12.10
     # via responses
-typing-extensions==4.6.0
+typing-extensions==4.7.1
     # via
     #   asgiref
     #   astroid
-urllib3==2.0.2
+urllib3==2.0.3
     # via
     #   requests
     #   responses
