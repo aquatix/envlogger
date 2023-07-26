@@ -16,7 +16,7 @@ blessed==1.20.0
     # via curtsies
 bpython==0.24
     # via -r requirements-dev.in
-certifi==2023.5.7
+certifi==2023.7.22
     # via requests
 charset-normalizer==3.2.0
     # via requests
@@ -26,7 +26,7 @@ cwcwidth==0.1.8
     # via
     #   bpython
     #   curtsies
-dill==0.3.6
+dill==0.3.7
     # via pylint
 django==4.2.3
     # via
@@ -46,7 +46,7 @@ lazy-object-proxy==1.9.0
     # via astroid
 mccabe==0.7.0
     # via pylint
-platformdirs==3.8.1
+platformdirs==3.9.1
     # via pylint
 psycopg2==2.9.6
     # via -r requirements.in
@@ -54,7 +54,7 @@ pycodestyle==2.10.0
     # via autopep8
 pygments==2.15.1
     # via bpython
-pylint==2.17.4
+pylint==2.17.5
     # via
     #   -r requirements-dev.in
     #   pylint-django
@@ -69,7 +69,7 @@ python-forecastio==1.4.0
     # via -r requirements.in
 pyxdg==0.28
     # via bpython
-pyyaml==6.0
+pyyaml==6.0.1
     # via responses
 requests==2.31.0
     # via
@@ -78,7 +78,7 @@ requests==2.31.0
     #   pyowm
     #   python-forecastio
     #   responses
-responses==0.23.1
+responses==0.23.2
     # via python-forecastio
 six==1.16.0
     # via blessed
@@ -92,13 +92,13 @@ tomli==2.0.1
     #   pylint
 tomlkit==0.11.8
     # via pylint
-types-pyyaml==6.0.12.10
+types-pyyaml==6.0.12.11
     # via responses
 typing-extensions==4.7.1
     # via
     #   asgiref
     #   astroid
-urllib3==2.0.3
+urllib3==2.0.4
     # via
     #   requests
     #   responses
