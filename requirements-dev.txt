@@ -8,9 +8,9 @@
 
 asgiref==3.7.2
     # via django
-astroid==2.15.6
+astroid==2.15.8
     # via pylint
-autopep8==2.0.2
+autopep8==2.0.4
     # via -r requirements-dev.in
 blessed==1.20.0
     # via curtsies
@@ -18,9 +18,9 @@ bpython==0.24
     # via -r requirements-dev.in
 certifi==2023.7.22
     # via requests
-charset-normalizer==3.2.0
+charset-normalizer==3.3.0
     # via requests
-curtsies==0.4.1
+curtsies==0.4.2
     # via bpython
 cwcwidth==0.1.8
     # via
@@ -28,15 +28,15 @@ cwcwidth==0.1.8
     #   curtsies
 dill==0.3.7
     # via pylint
-django==4.2.3
+django==4.2.5
     # via
     #   -r requirements.in
     #   django-debug-toolbar
-django-debug-toolbar==4.1.0
+django-debug-toolbar==4.2.0
     # via -r requirements-dev.in
 geojson==2.5.0
     # via pyowm
-greenlet==2.0.2
+greenlet==3.0.0
     # via bpython
 idna==3.4
     # via requests
@@ -46,15 +46,15 @@ lazy-object-proxy==1.9.0
     # via astroid
 mccabe==0.7.0
     # via pylint
-platformdirs==3.9.1
+platformdirs==3.11.0
     # via pylint
-psycopg2==2.9.6
+psycopg2==2.9.9
     # via -r requirements.in
-pycodestyle==2.10.0
+pycodestyle==2.11.0
     # via autopep8
-pygments==2.15.1
+pygments==2.16.1
     # via bpython
-pylint==2.17.5
+pylint==2.17.7
     # via
     #   -r requirements-dev.in
     #   pylint-django
@@ -78,7 +78,7 @@ requests==2.31.0
     #   pyowm
     #   python-forecastio
     #   responses
-responses==0.23.2
+responses==0.23.3
     # via python-forecastio
 six==1.16.0
     # via blessed
@@ -90,19 +90,19 @@ tomli==2.0.1
     # via
     #   autopep8
     #   pylint
-tomlkit==0.11.8
+tomlkit==0.12.1
     # via pylint
-types-pyyaml==6.0.12.11
+types-pyyaml==6.0.12.12
     # via responses
-typing-extensions==4.7.1
+typing-extensions==4.8.0
     # via
     #   asgiref
     #   astroid
-urllib3==2.0.4
+urllib3==2.0.6
     # via
     #   requests
     #   responses
-wcwidth==0.2.6
+wcwidth==0.2.8
     # via blessed
 wrapt==1.15.0
     # via astroid
