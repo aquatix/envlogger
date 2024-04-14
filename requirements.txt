@@ -16,7 +16,7 @@ django==5.0.2
     # via -r requirements.in
 geojson==2.5.0
     # via pyowm
-idna==3.6
+idna==3.7
     # via requests
 psycopg2==2.9.9
     # via -r requirements.in
