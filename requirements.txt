@@ -2,7 +2,7 @@
 #    uv pip compile requirements.in
 asgiref==3.8.1
     # via django
-certifi==2024.2.2
+certifi==2024.7.4
     # via requests
 charset-normalizer==3.3.2
     # via requests
@@ -26,11 +26,11 @@ requests==2.32.3
     #   pyowm
     #   python-forecastio
     #   responses
-responses==0.25.0
+responses==0.25.3
     # via python-forecastio
 sqlparse==0.5.0
     # via django
-urllib3==2.2.1
+urllib3==2.2.2
     # via
     #   requests
     #   responses
