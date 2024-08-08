@@ -6,7 +6,7 @@ certifi==2024.7.4
     # via requests
 charset-normalizer==3.3.2
     # via requests
-django==5.0.7
+django==5.1
     # via -r requirements.in
 geojson==2.5.0
     # via pyowm
@@ -18,7 +18,7 @@ pyowm==2.10.0
     # via -r requirements.in
 python-forecastio==1.4.0
     # via -r requirements.in
-pyyaml==6.0.1
+pyyaml==6.0.2
     # via responses
 requests==2.32.3
     # via
@@ -28,7 +28,7 @@ requests==2.32.3
     #   responses
 responses==0.25.3
     # via python-forecastio
-sqlparse==0.5.0
+sqlparse==0.5.1
     # via django
 urllib3==2.2.2
     # via
