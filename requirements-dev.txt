@@ -22,7 +22,7 @@ cwcwidth==0.1.10
     #   curtsies
 dill==0.3.9
     # via pylint
-django==5.1.6
+django==5.1.7
     # via
     #   -r requirements.in
     #   django-debug-toolbar
