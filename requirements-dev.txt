@@ -2,7 +2,7 @@
 #    uv pip compile requirements-dev.in
 asgiref==3.8.1
     # via django
-astroid==3.3.8
+astroid==3.3.9
     # via pylint
 autopep8==2.3.2
     # via -r requirements-dev.in
@@ -22,11 +22,11 @@ cwcwidth==0.1.10
     #   curtsies
 dill==0.3.9
     # via pylint
-django==5.1.7
+django==5.2
     # via
     #   -r requirements.in
     #   django-debug-toolbar
-django-debug-toolbar==5.0.1
+django-debug-toolbar==5.1.0
     # via -r requirements-dev.in
 geojson==2.5.0
     # via pyowm
@@ -38,15 +38,15 @@ isort==6.0.1
     # via pylint
 mccabe==0.7.0
     # via pylint
-platformdirs==4.3.6
+platformdirs==4.3.7
     # via pylint
 psycopg2==2.9.10
     # via -r requirements.in
-pycodestyle==2.12.1
+pycodestyle==2.13.0
     # via autopep8
 pygments==2.19.1
     # via bpython
-pylint==3.3.4
+pylint==3.3.6
     # via
     #   -r requirements-dev.in
     #   pylint-django
@@ -70,7 +70,7 @@ requests==2.32.3
     #   pyowm
     #   python-forecastio
     #   responses
-responses==0.25.6
+responses==0.25.7
     # via python-forecastio
 six==1.17.0
     # via blessed
