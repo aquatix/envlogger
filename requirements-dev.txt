@@ -2,35 +2,35 @@
 #    uv pip compile requirements-dev.in
 asgiref==3.8.1
     # via django
-astroid==3.3.9
+astroid==3.3.10
     # via pylint
 autopep8==2.3.2
     # via -r requirements-dev.in
-blessed==1.20.0
+blessed==1.21.0
     # via curtsies
 bpython==0.25
     # via -r requirements-dev.in
-certifi==2025.1.31
+certifi==2025.4.26
     # via requests
-charset-normalizer==3.4.1
+charset-normalizer==3.4.2
     # via requests
-curtsies==0.4.2
+curtsies==0.4.3
     # via bpython
 cwcwidth==0.1.10
     # via
     #   bpython
     #   curtsies
-dill==0.3.9
+dill==0.4.0
     # via pylint
-django==5.2
+django==5.2.3
     # via
     #   -r requirements.in
     #   django-debug-toolbar
-django-debug-toolbar==5.1.0
+django-debug-toolbar==5.2.0
     # via -r requirements-dev.in
 geojson==2.5.0
     # via pyowm
-greenlet==3.1.1
+greenlet==3.2.3
     # via bpython
 idna==3.10
     # via requests
@@ -38,7 +38,7 @@ isort==6.0.1
     # via pylint
 mccabe==0.7.0
     # via pylint
-platformdirs==4.3.7
+platformdirs==4.3.8
     # via pylint
 psycopg2==2.9.10
     # via -r requirements.in
@@ -46,7 +46,7 @@ pycodestyle==2.13.0
     # via autopep8
 pygments==2.19.1
     # via bpython
-pylint==3.3.6
+pylint==3.3.7
     # via
     #   -r requirements-dev.in
     #   pylint-django
@@ -63,7 +63,7 @@ pyxdg==0.28
     # via bpython
 pyyaml==6.0.2
     # via responses
-requests==2.32.3
+requests==2.32.4
     # via
     #   -r requirements.in
     #   bpython
@@ -72,15 +72,13 @@ requests==2.32.3
     #   responses
 responses==0.25.7
     # via python-forecastio
-six==1.17.0
-    # via blessed
 sqlparse==0.5.3
     # via
     #   django
     #   django-debug-toolbar
-tomlkit==0.13.2
+tomlkit==0.13.3
     # via pylint
-urllib3==2.3.0
+urllib3==2.4.0
     # via
     #   requests
     #   responses
