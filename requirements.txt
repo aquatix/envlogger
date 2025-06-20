@@ -30,7 +30,7 @@ responses==0.25.7
     # via python-forecastio
 sqlparse==0.5.3
     # via django
-urllib3==2.4.0
+urllib3==2.5.0
     # via
     #   requests
     #   responses
