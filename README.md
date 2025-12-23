@@ -1,3 +1,8 @@
+⚠️  [Moved to Codeberg](https://codeberg.org/diginaut/envlogger) | [Read here why](https://dammit.nl/jumping-the-github-ship.html) ⚠️
+
+**This repository is not mirrored.**
+
+
 # envlogger
 
 Log environmental information, like weather, temperatures at locations and of devices, traffic and more.
